@@ -2,7 +2,7 @@
   "name": "myapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://arpangupta1805.github.io/pdc_final",
+  "homepage": "https://arpangupta1805.github.io/pdc-own",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
