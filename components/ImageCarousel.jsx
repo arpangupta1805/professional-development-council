@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { EventsData } from '../data/EventsData';
 import Modal from './Model';
+import { getAssetPath } from '../utils/assetPath';
 
 const ImageCarousel = () => {
   const initialDisplayCount = 3;
@@ -33,7 +34,7 @@ const ImageCarousel = () => {
               <div className="card-item">
                 <div className="card-item-img">
                   <a onClick={() => openModal(item)}>
-                    <Image className='Image-general' src={item.image || "/assets/images/default.jpg"} alt={item.EventName} width={700} height={700} />
+                    <Image className='Image-general' src={getAssetPath(item.image) || getAssetPath("/assets/images/default.jpg")} alt={item.EventName} width={700} height={700} />
                   </a>
                 </div>
                 <div className="card-item-content">

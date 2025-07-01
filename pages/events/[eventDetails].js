@@ -3,6 +3,7 @@ import { EventsData } from '../../data/EventsData'
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import { getAssetPath } from '../../utils/assetPath';
 
 const EventsDetails = () => {
     const Router = useRouter()
@@ -52,7 +53,7 @@ const EventsDetails = () => {
                                 </div>
                                 <div className="col-md-6">
                                     {Event.image && (
-                                        <Image src={Event.image} alt="event" className='Image-general' width={1000} height={1000}/>
+                                        <Image src={getAssetPath(Event.image)} alt="event" className='Image-general' width={1000} height={1000}/>
                                     )}
                                 </div>
                             </div>

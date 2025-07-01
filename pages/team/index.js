@@ -4,6 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Head from "next/head";
 import Image from "next/image";
+import { getAssetPath } from "../../utils/assetPath";
 
 const Team = () => {
   useEffect(() => {
@@ -35,7 +36,7 @@ const Team = () => {
                     <div className="thumb">
                       <Image
                         className="team-image"
-                        src={item.image}
+                        src={getAssetPath(item.image)}
                         alt="Thumb"
                         width={300}
                         height={300}

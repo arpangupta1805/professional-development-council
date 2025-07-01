@@ -3,6 +3,7 @@ import { BlogsData } from '../../data/BlogsData'
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import { getAssetPath } from '../../utils/assetPath';
 
 const BlogsDetails = () => {
     const Router = useRouter()
@@ -47,7 +48,7 @@ const BlogsDetails = () => {
 
                         </div>
                         <div className="col-md-6">
-                            <Image className='Image-general' src={Blog.image} alt="event" width={100} height={100} />
+                            <Image className='Image-general' src={getAssetPath(Blog.image)} alt="event" width={100} height={100} />
 
 
                         </div>

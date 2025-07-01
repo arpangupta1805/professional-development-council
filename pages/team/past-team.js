@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Head from "next/head";
 import Image from "next/image";
+import { getAssetPath } from "../../utils/assetPath";
 
 const PastTeam = () => {
   useEffect(() => {
@@ -32,7 +33,7 @@ const PastTeam = () => {
                 <div className="col-md-3 single-item" key={index} data-aos="fade-up">
                   <div className="item">
                     <div className="thumb">
-                      <Image className="img-fluid Image-general" src={item.image} alt="Thumb" />
+                      <Image className="img-fluid Image-general" src={getAssetPath(item.image)} alt="Thumb" />
                       <div className="overlay">
                         <h4>{item.name}</h4>
                         <p>

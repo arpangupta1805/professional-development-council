@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { getAssetPath } from '../utils/assetPath';
 
 const Model = ({ event, isOpen, onClose }) => {
   if (!isOpen || !event) {
@@ -21,7 +22,7 @@ const Model = ({ event, isOpen, onClose }) => {
           <p><a href={event.resources} target="_blank" style={{color: "blue"}}>Resources</a></p>
         )}
         {event.image && (
-          <Image src={event.image} alt="event" className='Image-popup' width={1000} height={1000} />
+          <Image src={getAssetPath(event.image)} alt="event" className='Image-popup' width={1000} height={1000} />
         )}
       </div>
     </div>

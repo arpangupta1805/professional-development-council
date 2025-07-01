@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { getAssetPath } from "../../utils/assetPath";
 
 const Blogs = () => {
     useEffect(() => {
@@ -31,7 +32,7 @@ const Blogs = () => {
                                 <div className='col-md-4' key={index}>
                                     <div className="card-item" data-aos="fade-up">
                                         <div className="card-item-img">
-                                            <Image  className='Image-general' src={item.image} alt='item' width={100} height={100}/>
+                                            <Image  className='Image-general' src={getAssetPath(item.image)} alt='item' width={100} height={100}/>
                                         </div>
                                         {item.Tags.map((tags,index) => {
                                             return (
