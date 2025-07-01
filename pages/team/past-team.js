@@ -33,7 +33,13 @@ const PastTeam = () => {
                 <div className="col-md-3 single-item" key={index} data-aos="fade-up">
                   <div className="item">
                     <div className="thumb">
-                      <Image className="img-fluid Image-general" src={getAssetPath(item.image)} alt="Thumb" />
+                      <Image 
+                        className="img-fluid Image-general" 
+                        src={getAssetPath(item.image)} 
+                        alt={item.name}
+                        width={300}
+                        height={300}
+                      />
                       <div className="overlay">
                         <h4>{item.name}</h4>
                         <p>
