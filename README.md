@@ -20,7 +20,7 @@ This project is configured for automatic deployment to GitHub Pages using GitHub
 #### Setup Instructions:
 
 1. **Repository Configuration** ✅ COMPLETED:
-   - Repository name configured as `pdc_final`
+   - Repository name configured as `pdc-own`
    - `basePath` and `assetPrefix` configured in `next.config.js`
    - `homepage` set in `package.json`
 
@@ -32,7 +32,7 @@ This project is configured for automatic deployment to GitHub Pages using GitHub
 3. **Google Authentication Setup** (Optional):
    - Get a Google OAuth Client ID from [Google Cloud Console](https://console.cloud.google.com/)
    - Add authorized JavaScript origins: `https://arpangupta1805.github.io`
-   - Add authorized redirect URIs: `https://arpangupta1805.github.io/pdc_final/auth/signin`
+   - Add authorized redirect URIs: `https://arpangupta1805.github.io/pdc-own/auth/signin`
    - Add `NEXT_PUBLIC_GOOGLE_CLIENT_ID` to repository secrets:
      - Go to Settings > Secrets and variables > Actions
      - Click "New repository secret"
@@ -57,7 +57,7 @@ npm run deploy
 - ⚠️  API routes are not supported on GitHub Pages (removed from build)
 
 #### Your Site URL:
-Once deployed, your site will be available at: **https://arpangupta1805.github.io/pdc_final/**
+Once deployed, your site will be available at: **https://arpangupta1805.github.io/pdc-own/**
 
 #### Checking Deployment Status:
 - Go to your repository > Actions tab to see deployment progress
