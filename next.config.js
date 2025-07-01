@@ -26,5 +26,12 @@ const nextConfig = {
     NEXT_PUBLIC_BASE_PATH: isProd ? `/${repoName}` : '',
   },
 };
+const isGithubPages = process.env.NODE_ENV === 'production';
+
+module.exports = {
+  output: 'export', // enables static export
+  basePath: isGithubPages ? '/pdc_final' : '',
+  assetPrefix: isGithubPages ? '/pdc_final/' : '',
+};
 
 module.exports = nextConfig;

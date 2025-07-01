@@ -2,6 +2,7 @@
   "name": "myapp",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://<your-username>.github.io/<your-repo-name>",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -27,6 +28,6 @@
   "devDependencies": {
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.16",
-    "gh-pages": "^6.0.0"
+    "gh-pages": "^6.3.0"
   }
 }
