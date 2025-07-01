@@ -19,19 +19,25 @@ This project is configured for automatic deployment to GitHub Pages using GitHub
 
 #### Setup Instructions:
 
-1. **Repository Configuration**:
-   - Make sure your repository name matches the `basePath` in `next.config.js`
-   - Current configuration assumes repository name is `pdc-own`
-   - If your repository has a different name, update the `basePath` and `assetPrefix` in `next.config.js`
+1. **Repository Configuration** ✅ COMPLETED:
+   - Repository name configured as `pdc_final`
+   - `basePath` and `assetPrefix` configured in `next.config.js`
+   - `homepage` set in `package.json`
 
-2. **GitHub Settings**:
+2. **GitHub Settings** - YOU NEED TO DO THIS:
    - Go to your repository's Settings > Pages
    - Set Source to "GitHub Actions"
    - The workflow will automatically deploy when you push to the main branch
 
-3. **Environment Variables** (if needed):
-   - Add `NEXT_PUBLIC_GOOGLE_CLIENT_ID` to repository secrets if using Google authentication
-   - Go to Settings > Secrets and variables > Actions
+3. **Google Authentication Setup** (Optional):
+   - Get a Google OAuth Client ID from [Google Cloud Console](https://console.cloud.google.com/)
+   - Add authorized JavaScript origins: `https://arpangupta1805.github.io`
+   - Add authorized redirect URIs: `https://arpangupta1805.github.io/pdc_final/auth/signin`
+   - Add `NEXT_PUBLIC_GOOGLE_CLIENT_ID` to repository secrets:
+     - Go to Settings > Secrets and variables > Actions
+     - Click "New repository secret"
+     - Name: `NEXT_PUBLIC_GOOGLE_CLIENT_ID`
+     - Value: Your Google OAuth Client ID
 
 #### Manual Deployment:
 
@@ -43,10 +49,20 @@ npm run deploy
 
 #### Important Notes:
 
-- This is a static export of the Next.js app (no server-side features)
-- Authentication has been disabled for GitHub Pages compatibility
-- All content is publicly accessible
-- API routes have been removed as they're not supported on GitHub Pages
+- ✅ This is a static export of the Next.js app
+- ✅ Authentication is implemented using Google Sign-In (client-side only)
+- ✅ Protected routes: All `/material/*` and `/resume_review` pages
+- ✅ Only @iitgn.ac.in email addresses can access protected content
+- ✅ All public content is accessible without authentication
+- ⚠️  API routes are not supported on GitHub Pages (removed from build)
+
+#### Your Site URL:
+Once deployed, your site will be available at: **https://arpangupta1805.github.io/pdc_final/**
+
+#### Checking Deployment Status:
+- Go to your repository > Actions tab to see deployment progress
+- First deployment may take 5-10 minutes
+- Future deployments will be automatic on every push to main branch
 
 ## 📁 Project Structure
 

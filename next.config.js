@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'pdc-own'; // Replace 'pdc-own' with your actual GitHub repository name
+const repoName = 'pdc_final'; // Your actual GitHub repository name
 
 const nextConfig = {
   reactStrictMode: true,
