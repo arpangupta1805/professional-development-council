@@ -4,9 +4,12 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useAuth } from "../contexts/AuthContext";
 import { getAssetPath } from "../utils/assetPath";
+import { getFallbackAvatarUrl } from "../utils/imageProxy";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const [fallbackImageSrc, setFallbackImageSrc] = useState(null);
   const router = useRouter();
   const { user, signInWithGoogle, signOut, loading } = useAuth();
 
@@ -21,11 +24,17 @@ const Navbar = () => {
       .slice(0, 2);
   };
 
-  // Debug logging
+  // Debug logging and setup fallback image
   React.useEffect(() => {
     if (user) {
       console.log('User data:', user);
       console.log('Picture URL:', user.picture);
+      setImageError(false); // Reset image error when user changes
+      
+      // Generate fallback image URL
+      const fallbackUrl = getFallbackAvatarUrl(user.name, 200);
+      setFallbackImageSrc(fallbackUrl);
+      console.log('Fallback image URL:', fallbackUrl);
     }
   }, [user]);
 
@@ -352,49 +361,76 @@ const Navbar = () => {
             {user ? (
               <div className="profile-section">
                 <div className="profile-img">
-                  {user.picture ? (
+                  {user.picture && !imageError ? (
                     <img
                       src={user.picture}
                       width={40}
                       height={40}
                       className="profile-avatar"
                       alt={`${user.name} profile picture`}
+                      referrerPolicy="no-referrer"
                       style={{ 
                         borderRadius: '50%', 
                         objectFit: 'cover',
                         border: '2px solid #fff',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                        backgroundColor: '#f0f0f0',
+                        display: 'block'
                       }}
                       onError={(e) => {
-                        console.log('Image failed to load:', user.picture);
-                        // Hide the broken image and show initials fallback
-                        e.target.style.display = 'none';
-                        e.target.nextElementSibling.style.display = 'flex';
+                        console.log('Primary image failed to load:', user.picture);
+                        setImageError(true);
                       }}
-                      onLoad={() => {
-                        console.log('Image loaded successfully:', user.picture);
+                      onLoad={(e) => {
+                        console.log('Primary image loaded successfully:', user.picture);
+                        setImageError(false);
                       }}
                     />
-                  ) : null}
-                  <div 
-                    className="profile-avatar-fallback"
-                    style={{
-                      display: user.picture ? 'none' : 'flex',
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '50%',
-                      backgroundColor: '#4285f4',
-                      color: 'white',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '16px',
-                      fontWeight: 'bold',
-                      border: '2px solid #fff',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-                    }}
-                  >
-                    {getUserInitials(user.name)}
-                  </div>
+                  ) : fallbackImageSrc && !imageError ? (
+                    <img
+                      src={fallbackImageSrc}
+                      width={40}
+                      height={40}
+                      className="profile-avatar"
+                      alt={`${user.name} avatar`}
+                      style={{ 
+                        borderRadius: '50%', 
+                        objectFit: 'cover',
+                        border: '2px solid #fff',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                        backgroundColor: '#f0f0f0',
+                        display: 'block'
+                      }}
+                      onError={(e) => {
+                        console.log('Fallback image failed to load:', fallbackImageSrc);
+                        setImageError(true);
+                      }}
+                      onLoad={(e) => {
+                        console.log('Fallback image loaded successfully:', fallbackImageSrc);
+                      }}
+                    />
+                  ) : (
+                    <div 
+                      className="profile-avatar-fallback"
+                      style={{
+                        display: 'flex',
+                        width: '40px',
+                        height: '40px',
+                        borderRadius: '50%',
+                        backgroundColor: '#4285f4',
+                        color: 'white',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '16px',
+                        fontWeight: 'bold',
+                        border: '2px solid #fff',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      {getUserInitials(user.name)}
+                    </div>
+                  )}
                   <div className="profile-data">
                     <div className="profile-info">
                       <p>

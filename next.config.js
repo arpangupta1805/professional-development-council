@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'pdc-own'; // Your actual GitHub repository name
+const repoName = 'pdc-own'; // Replace with your actual GitHub repository name
 
 const nextConfig = {
   reactStrictMode: true,
@@ -25,6 +25,13 @@ const nextConfig = {
     NEXT_PUBLIC_GOOGLE_CLIENT_ID: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
     NEXT_PUBLIC_BASE_PATH: isProd ? `/${repoName}` : '',
   },
+};
+const isGithubPages = process.env.NODE_ENV === 'production';
+
+module.exports = {
+  output: 'export', // enables static export
+  basePath: isGithubPages ? '/pdc_final' : '',
+  assetPrefix: isGithubPages ? '/pdc_final/' : '',
 };
 
 module.exports = nextConfig;

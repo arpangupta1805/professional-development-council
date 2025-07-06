@@ -1750,7 +1750,7 @@ p {
   justify-content: center;
   background:
     linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%),
-    url("/assets/images/tedxiitgn.jpg");
+    url("/assets/images/tedx-bg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

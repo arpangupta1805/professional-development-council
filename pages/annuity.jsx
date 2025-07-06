@@ -4,7 +4,6 @@ import "aos/dist/aos.css";
 import Head from "next/head";
 import Image from "next/image";
 import AnnuityClubImg from "../public/assets/images/Annuity_club.jpeg";
-import { getAssetPath } from "../utils/assetPath";
 
 const AnnuityClub = () => {
   const [activeTab, setActiveTab] = useState("about");
@@ -438,7 +437,7 @@ const AnnuityClub = () => {
                 >
                   <div className="team-image-container">
                     <Image
-                      src={getAssetPath(member.image)}
+                      src={member.image}
                       alt={member.name}
                       className="team-member-image"
                     />

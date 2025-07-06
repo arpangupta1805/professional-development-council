@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { getHighResGoogleImage } from '../utils/imageProxy';
 
 const AuthContext = createContext();
 
@@ -42,21 +43,9 @@ export const AuthProvider = ({ children }) => {
 
       const initializeGoogleSignIn = () => {
         try {
-          const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
-          
-          console.log('Environment check:', {
-            clientId: clientId ? 'Present' : 'Missing',
-            length: clientId ? clientId.length : 0,
-            nodeEnv: process.env.NODE_ENV
-          });
-          
-          if (!clientId) {
-            throw new Error('Google Client ID is not configured. Please set NEXT_PUBLIC_GOOGLE_CLIENT_ID environment variable.');
-          }
-          
           if (typeof window !== 'undefined' && window.google && window.google.accounts) {
             window.google.accounts.id.initialize({
-              client_id: clientId,
+              client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
               callback: (response) => {
                 try {
                   if (!response.credential) {
@@ -70,16 +59,22 @@ export const AuthProvider = ({ children }) => {
                   
                   // Check if email is from @iitgn.ac.in domain
                   if (payload.email && payload.email.endsWith('@iitgn.ac.in')) {
+                    // Use a higher resolution Google profile image
+                    const profilePicture = payload.picture ? 
+                      getHighResGoogleImage(payload.picture) : 
+                      null;
+                    
                     const userData = {
                       name: payload.name,
                       email: payload.email,
-                      picture: payload.picture,
+                      picture: profilePicture,
                       domain: payload.hd || 'iitgn.ac.in',
                       signInTime: Date.now(),
                       accessToken: response.credential // Store the credential as access token
                     };
                     
                     console.log('User data created:', userData); // Debug log
+                    console.log('Profile picture URL:', profilePicture); // Debug log
                     
                     setUser(userData);
                     localStorage.setItem('pdc_user', JSON.stringify(userData));
