@@ -42,9 +42,21 @@ export const AuthProvider = ({ children }) => {
 
       const initializeGoogleSignIn = () => {
         try {
+          const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
+          
+          console.log('Environment check:', {
+            clientId: clientId ? 'Present' : 'Missing',
+            length: clientId ? clientId.length : 0,
+            nodeEnv: process.env.NODE_ENV
+          });
+          
+          if (!clientId) {
+            throw new Error('Google Client ID is not configured. Please set NEXT_PUBLIC_GOOGLE_CLIENT_ID environment variable.');
+          }
+          
           if (typeof window !== 'undefined' && window.google && window.google.accounts) {
             window.google.accounts.id.initialize({
-              client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+              client_id: clientId,
               callback: (response) => {
                 try {
                   if (!response.credential) {

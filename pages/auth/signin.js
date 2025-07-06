@@ -18,6 +18,19 @@ const SignIn = () => {
   const handleSignIn = async () => {
     try {
       clearError(); // Clear any previous errors
+      
+      // Debug environment variables
+      console.log('Environment debug:', {
+        clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID ? 'Present' : 'Missing',
+        clientIdLength: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID?.length || 0,
+        nodeEnv: process.env.NODE_ENV,
+        basePath: process.env.NEXT_PUBLIC_BASE_PATH
+      });
+      
+      if (!process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID) {
+        throw new Error('Google authentication is not properly configured. Please contact the administrator.');
+      }
+      
       await signInWithGoogle();
       // Router.push will be handled by the useEffect above
     } catch (error) {
