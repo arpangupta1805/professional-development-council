@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useAuth } from "../contexts/AuthContext";
-import { getAssetPath } from "../utils/assetPath";
 import { getFallbackAvatarUrl } from "../utils/imageProxy";
 
 const Navbar = () => {
@@ -83,7 +82,7 @@ const Navbar = () => {
         <div className="nav-logo">
           <Link href="/" className="logo-image" onClick={closeMenu}>
             <Image
-              src={getAssetPath("/assets/images/PDC IITGN.jpg")}
+              src="/assets/images/PDC IITGN.jpg"
               alt="PDC IIT Gandhinagar Logo"
               className="nav-logo-img"
               width={50}
