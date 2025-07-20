@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { PlacementTalksVideosData } from '../../data/PlacementTalksVideosData'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -16,7 +16,7 @@ const PlacementTalksVideos = () => {
 
             </Head>
             <header id="page-header">
-                <div className="page-heading">
+                <div className="page-heading hero-content">
                     <h2>Placement Talks Videos</h2>
                 </div>
             </header>
@@ -27,7 +27,7 @@ const PlacementTalksVideos = () => {
 
                 {PlacementTalksVideosData.map((item,index) => {
                     return (
-                        <div className="card-lg-container" data-aos="fade-up" key={index}>
+                        <div className="card-lg-container card-modern" data-aos="fade-up" key={index}>
                             <div className="row">
                                 <div className="col-md-6">
                                     <iframe width="100%" height="315" src={item.VideoLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

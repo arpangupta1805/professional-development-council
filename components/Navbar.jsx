@@ -78,7 +78,7 @@ const Navbar = () => {
 
   return (
     <div className="nav_container">
-      <nav className="main_navbar">
+      <nav className="main_navbar navbar glass-container">
         <div className="nav-logo">
           <Link href="/" className="logo-image" onClick={closeMenu}>
             <Image

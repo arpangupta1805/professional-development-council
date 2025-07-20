@@ -203,12 +203,12 @@ const PrepMat = () => {
       </Head>
 
       <motion.section
-        className="prepmat-hero"
+        className="prepmat-heo card-modern"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="hero-content-wrapper">
+        <div className="">
           <motion.div
             className="hero-text"
             initial={{ opacity: 0, x: -50 }}
@@ -217,7 +217,6 @@ const PrepMat = () => {
           >
             <h1 className="hero-title">
               PrepMat
-              <span className="hero-subtitle-badge">Professional</span>
             </h1>
             <p className="hero-description">
               Master your placement and internship preparation with our
@@ -264,7 +263,7 @@ const PrepMat = () => {
 
       <div className="page-container">
         <motion.div
-          className="progress-dashboard"
+          className="progress-dashboard card-modern"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -274,7 +273,7 @@ const PrepMat = () => {
               <h2>Welcome back, {user?.name || "Student"}!</h2>
               <p>Continue your preparation journey</p>
             </div>
-            <div className="achievement-badge">
+            <div className="achievement-badge card-modern">
               <span className="badge-icon">🎯</span>
               <div className="badge-content">
                 <span className="badge-title">Progress</span>
@@ -285,7 +284,7 @@ const PrepMat = () => {
             </div>
           </div>
 
-          <div className="progress-visualization">
+          <div className="progress-visualization card-modern">
             <div className="progress-header">
               <h3>Your Learning Progress</h3>
               <span className="progress-text">
@@ -317,16 +316,17 @@ const PrepMat = () => {
         </motion.div>
 
         <motion.div
-          className="filters-section"
+          className="filters-section card-modern"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
           <div className="filters-header">
             <h3>Find Your Materials</h3>
-            <div className="view-toggle">
+            <div className="view-toggl">
               <button
-                className={`view-btn ${viewMode === "grid" ? "active" : ""}`}
+                className={`btn  ${viewMode === "grid" ? "active" : ""}`}
+                style={{ marginRight: '10px' }}
                 onClick={() => setViewMode("grid")}
                 aria-label="Grid view"
               >
@@ -340,7 +340,7 @@ const PrepMat = () => {
                 </svg>
               </button>
               <button
-                className={`view-btn ${viewMode === "list" ? "active" : ""}`}
+                className={`view btn ${viewMode === "list" ? "active" : ""}`}
                 onClick={() => setViewMode("list")}
                 aria-label="List view"
               >
@@ -420,7 +420,7 @@ const PrepMat = () => {
             </div>
 
             <div className="results-summary">
-              <span className="results-count">
+              <span className="results-count card-modern">
                 {filteredArticles.length}{" "}
                 {filteredArticles.length === 1 ? "company" : "companies"} found
               </span>
@@ -445,7 +445,12 @@ const PrepMat = () => {
               <AnimatePresence>
                 {currentData.map((item, index) => (
                   <motion.div
-                    className="material-card"
+                    className="glass-container"
+                    style={
+                            {
+                              padding: '1rem',
+                          }
+                    } 
                     key={item.Id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -458,7 +463,7 @@ const PrepMat = () => {
                       <div className="company-info">
                         <h4 className="company-name">{item.CompanyName}</h4>
                         <div className="card-meta">
-                          <span className="year-badge">{item.Year}</span>
+                          <span className="year glass-container p-2">{item.Year}</span>
                           <span className="separator">•</span>
                           <span className="material-count">
                             {
@@ -508,7 +513,7 @@ const PrepMat = () => {
                           href={item.MaterialForPlacement}
                           target="_blank"
                           rel="noreferrer"
-                          className="action-btn primary"
+                          className=" btn primary"
                         >
                           <svg
                             className="btn-icon"
@@ -533,7 +538,7 @@ const PrepMat = () => {
                           href={item.MaterialForInternship}
                           target="_blank"
                           rel="noreferrer"
-                          className="action-btn secondary"
+                          className=" btn secondary"
                         >
                           <svg
                             className="btn-icon"
@@ -583,7 +588,15 @@ const PrepMat = () => {
 
         {totalPages > 1 && (
           <motion.div
-            className="pagination-advanced"
+            className="glass-container"
+            style={
+              {
+                display: 'flex',
+                justifyContent: 'space-between', 
+                alignItems: 'center',      
+                padding: 'var(--space-lg)',  
+              }
+            } 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
@@ -595,7 +608,7 @@ const PrepMat = () => {
             </div>
             <div className="pagination-controls">
               <button
-                className="pagination-btn nav-btn"
+                className="btn"
                 onClick={() => paginate(currentPage - 1)}
                 disabled={currentPage === 1}
                 aria-label="Previous page"
@@ -619,7 +632,7 @@ const PrepMat = () => {
                       <span className="pagination-dots">...</span>
                     ) : (
                       <button
-                        className={`pagination-btn page-btn ${currentPage === page ? "active" : ""}`}
+                        className={`pagination-bn  btn ${currentPage === page ? "active" : ""}`}
                         onClick={() => paginate(page)}
                       >
                         {page}
@@ -630,7 +643,7 @@ const PrepMat = () => {
               </div>
 
               <button
-                className="pagination-btn nav-btn"
+                className="btn"
                 onClick={() => paginate(currentPage + 1)}
                 disabled={currentPage === totalPages}
                 aria-label="Next page"

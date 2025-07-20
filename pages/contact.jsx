@@ -3,6 +3,8 @@ import Head from "next/head";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ContactForm from "../components/ContactForm";
+import { color } from "framer-motion";
+import { redirect } from "next/dist/server/api-utils";
 
 const Contact = () => {
   useEffect(() => {
@@ -97,7 +99,7 @@ const Contact = () => {
       </Head>
 
       <header id="page-header">
-        <div className="page-heading">
+        <div className="page-heading hero-content">
           <h2>Contact Us</h2>
           <h3>We&apos;re here to support your career journey</h3>
         </div>
@@ -106,7 +108,7 @@ const Contact = () => {
       <div className="page-container">
         {/* Introduction */}
         <section className="page-section" data-aos="fade-up">
-          <div className="card-modern text-center">
+          <div className="card-modern glass-container text-center">
             <h2>Let&apos;s Connect</h2>
             <p>
               Have questions about career development, need guidance on
@@ -126,7 +128,7 @@ const Contact = () => {
             {contactMethods.map((method, index) => (
               <div
                 key={index}
-                className="feature-card"
+                className="feature-card glass-card"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
@@ -294,7 +296,7 @@ const Contact = () => {
           </div>
           <div className="row">
             {faqs.map((faq, index) => (
-              <div key={index} className="col-md-6">
+              <div key={index} className="col-md-6 p-2">
                 <div
                   className="card-modern"
                   data-aos="fade-up"
@@ -327,7 +329,7 @@ const Contact = () => {
 
         {/* Call to Action */}
         <section className="page-section" data-aos="fade-up">
-          <div className="feature-section text-center">
+          <div className="feature-section card-modern text-center">
             <h2>Still have questions?</h2>
             <p>
               Can&apos;t find what you&apos;re looking for? Our team is always
@@ -371,7 +373,7 @@ const Contact = () => {
                   <h4 style={{ color: "var(--primary-600)", fontSize: "1rem" }}>
                     Location
                   </h4>
-                  <p>
+                  <p className="btn text-left">
                     Professional Development Council
                     <br />
                     IIT Gandhinagar
@@ -385,7 +387,7 @@ const Contact = () => {
                   <h4 style={{ color: "var(--primary-600)", fontSize: "1rem" }}>
                     Office Hours
                   </h4>
-                  <p>
+                  <p className="btn text-left">
                     Monday - Friday: 9:00 AM - 6:00 PM
                     <br />
                     Saturday: 10:00 AM - 2:00 PM
@@ -406,12 +408,13 @@ const Contact = () => {
                   }}
                 >
                   <li
+                    // className="glass-container"
                     style={{
                       marginBottom: "var(--space-md)",
                       padding: "var(--space-sm)",
-                      background: "var(--gray-50)",
                       borderRadius: "var(--radius-md)",
                       borderLeft: "4px solid var(--primary-500)",
+                      backgroundColor: 'black'
                     }}
                   >
                     <strong>🎯 Be Specific:</strong> Include details about your
@@ -421,9 +424,9 @@ const Contact = () => {
                     style={{
                       marginBottom: "var(--space-md)",
                       padding: "var(--space-sm)",
-                      background: "var(--gray-50)",
                       borderRadius: "var(--radius-md)",
                       borderLeft: "4px solid var(--primary-500)",
+                      backgroundColor: 'black'
                     }}
                   >
                     <strong>📧 Use IITGN Email:</strong> Contact us from your
@@ -431,10 +434,11 @@ const Contact = () => {
                   </li>
                   <li
                     style={{
+                      marginBottom: "var(--space-md)",
                       padding: "var(--space-sm)",
-                      background: "var(--gray-50)",
                       borderRadius: "var(--radius-md)",
                       borderLeft: "4px solid var(--primary-500)",
+                      backgroundColor: 'black'
                     }}
                   >
                     <strong>⏰ Response Time:</strong> We typically respond

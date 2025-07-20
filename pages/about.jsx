@@ -18,37 +18,27 @@ const About = () => {
 
   const values = [
     {
-      icon: "🎯",
       title: "Excellence",
       description:
         "We strive for excellence in everything we do, from career guidance to skill development programs.",
     },
     {
-      icon: "🤝",
       title: "Collaboration",
       description:
         "We believe in the power of collaboration between students, alumni, and industry professionals.",
     },
     {
-      icon: "🌟",
       title: "Innovation",
       description:
         "We continuously innovate our approaches to meet the evolving needs of the professional landscape.",
     },
     {
-      icon: "💡",
       title: "Empowerment",
       description:
         "We empower students with knowledge, skills, and confidence to achieve their career goals.",
     },
   ];
 
-  const achievements = [
-    { number: "500+", label: "Students Mentored", icon: "👥" },
-    { number: "95%", label: "Placement Success Rate", icon: "📈" },
-    { number: "150+", label: "Industry Partners", icon: "🏢" },
-    { number: "50+", label: "Events Organized", icon: "🎪" },
-  ];
 
   const services = [
     {
@@ -90,7 +80,7 @@ const About = () => {
   ];
 
   return (
-    <div className="main-container">
+    <div className="main-container about-page">
       <Head>
         <title>About Us | PDC IIT Gandhinagar</title>
         <meta
@@ -105,7 +95,7 @@ const About = () => {
       </Head>
 
       <header id="page-header">
-        <div className="page-heading">
+        <div className="page-heading hero-content">
           <h2>About PDC</h2>
           <h3>Empowering careers, building futures</h3>
         </div>
@@ -219,27 +209,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Achievement Stats */}
-        <section className="stats-section" data-aos="fade-up">
-          <div className="stats-grid">
-            {achievements.map((achievement, index) => (
-              <div
-                key={index}
-                className="stat-item"
-                data-aos="zoom-in"
-                data-aos-delay={index * 100}
-              >
-                <div
-                  style={{ fontSize: "2rem", marginBottom: "var(--space-sm)" }}
-                >
-                  {achievement.icon}
-                </div>
-                <h3>{achievement.number}</h3>
-                <p>{achievement.label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+
 
         {/* Our Values */}
         <section className="page-section" data-aos="fade-up">
@@ -250,15 +220,12 @@ const About = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="feature-card"
+                className="card-modern"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="icon">
-                  <span>{value.icon}</span>
-                </div>
-                <h3>{value.title}</h3>
-                <p>{value.description}</p>
+                <h3 className="text-center">{value.title}</h3>
+                <p className="text-left">{value.description}</p>
               </div>
             ))}
           </div>
@@ -271,9 +238,9 @@ const About = () => {
           </div>
           <div className="row">
             {services.map((service, index) => (
-              <div key={index} className="col-md-4">
+              <div key={index} className="col-md-4 p-3">
                 <div
-                  className="card-modern"
+                  className="card-modern "
                   data-aos="fade-up"
                   data-aos-delay={index * 100}
                 >
@@ -389,7 +356,7 @@ const About = () => {
 
         {/* Our Approach */}
         <section className="page-section" data-aos="fade-up">
-          <div className="feature-section">
+          <div className="feature-sectio card-modern">
             <div className="row">
               <div className="col-md-8">
                 <h2>Our Holistic Approach</h2>
@@ -398,33 +365,33 @@ const About = () => {
                   academic excellence. Our comprehensive approach encompasses:
                 </p>
                 <div className="approach-grid">
-                  <div className="approach-item">
+                  <div className="approach-item card-modern">
                     <h4>🎯 Personalized Guidance</h4>
                     <p>
                       Tailored career counseling based on individual strengths
                       and aspirations
                     </p>
                   </div>
-                  <div className="approach-item">
+                  <div className="approach-item card-modern btn-primary">
                     <h4>📈 Skill Development</h4>
                     <p>
                       Continuous learning opportunities to stay relevant in
                       evolving industries
                     </p>
                   </div>
-                  <div className="approach-item">
+                  <div className="approach-item card-modern btn-primary">
                     <h4>🌐 Industry Connect</h4>
                     <p>Direct access to leading companies and professionals</p>
                   </div>
-                  <div className="approach-item">
+                  <div className="approach-item card-modern btn-primary">
                     <h4>💼 Practical Experience</h4>
                     <p>Internships, projects, and real-world exposure</p>
                   </div>
-                  <div className="approach-item">
+                  <div className="approach-item card-modern btn-primary">
                     <h4>🤝 Mentorship</h4>
                     <p>Guidance from successful alumni and industry experts</p>
                   </div>
-                  <div className="approach-item">
+                  <div className="approach-item card-modern">
                     <h4>📊 Continuous Support</h4>
                     <p>Ongoing assistance throughout your career journey</p>
                   </div>

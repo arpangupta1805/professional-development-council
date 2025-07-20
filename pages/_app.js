@@ -4,6 +4,7 @@ import AuthWrapper from "../components/AuthWrapper";
 import GoogleAuth from "../components/GoogleAuth";
 import { AuthProvider } from "../contexts/AuthContext";
 import "../styles/index.css";
+import "../styles/glassmorphism.css"; // Add glassmorphism theme
 import "../styles/responsive.css";
 import "../styles/events.css"; // Import the global CSS file here
 import "../styles/prepmat.css"; // Import the PrepMat professional styles

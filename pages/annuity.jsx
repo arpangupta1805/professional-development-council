@@ -94,7 +94,7 @@ const AnnuityClub = () => {
       type: "Annual Festival",
       description:
         "Our flagship finance festival featuring competitions, workshops, and industry expert sessions.",
-      status: "upcoming",
+      status: "Completed",
     },
     {
       title: "Stock Market Simulation",
@@ -102,7 +102,7 @@ const AnnuityClub = () => {
       type: "Competition",
       description:
         "Virtual trading competition to test and improve investment skills.",
-      status: "ongoing",
+      status: "Completed",
     },
     {
       title: "Industry Connect Series",
@@ -110,7 +110,7 @@ const AnnuityClub = () => {
       type: "Networking",
       description:
         "Sessions with finance professionals and alumni working in top financial institutions.",
-      status: "ongoing",
+      status: "Completed",
     },
   ];
 
@@ -199,7 +199,7 @@ const AnnuityClub = () => {
 
       <div className="page-container">
         {/* Navigation Tabs */}
-        <section className="annuity-nav-section" data-aos="fade-up">
+        <section className="annuity-nav-section " data-aos="fade-up">
           <div className="annuity-nav-tabs">
             {[
               { id: "about", label: "About Club" },
@@ -209,7 +209,7 @@ const AnnuityClub = () => {
             ].map((tab) => (
               <button
                 key={tab.id}
-                className={`annuity-nav-tab ${activeTab === tab.id ? "active" : ""}`}
+                className={`annuity-nav-tab  ${activeTab === tab.id ? "active" : ""}`}
                 onClick={() => setActiveTab(tab.id)}
               >
                 {tab.label}
@@ -232,7 +232,7 @@ const AnnuityClub = () => {
 
             <div className="row">
               <div className="col-md-6">
-                <div className="annuity-content-card">
+                <div className="card-modern">
                   <h2>Our Vision</h2>
                   <p>
                     Finance remains one of the most dynamic and impactful
@@ -257,7 +257,7 @@ const AnnuityClub = () => {
               </div>
 
               <div className="col-md-6">
-                <div className="annuity-content-card">
+                <div className="card-modern">
                   <h2>Why Join Us?</h2>
                   <p>
                     Club members immerse themselves in a rich tapestry of
@@ -290,7 +290,7 @@ const AnnuityClub = () => {
                 {achievements.map((achievement, index) => (
                   <div
                     key={index}
-                    className="achievement-item"
+                    className="achievement-item btn"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
@@ -314,18 +314,28 @@ const AnnuityClub = () => {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="annuity-service-card"
+                  className="card-modern"
                   data-aos="fade-up"
                   data-aos-delay={index * 150}
                 >
                   <div className="service-header">
-                    <div className="service-icon"></div>
+                    {/* <div className="service-icon"></div> */}
                     <h3>{service.title}</h3>
                   </div>
                   <p>{service.description}</p>
                   <div className="service-features">
                     {service.features.map((feature, idx) => (
-                      <span key={idx} className="feature-tag">
+                      <span 
+                        key={idx} 
+                        // className="btn"
+                        style={
+                          {
+                            'border': '1px solid gray',
+                            'borderRadius': '10px',
+                            'padding' : '5px'
+                          }
+                        }
+                      >
                         {feature}
                       </span>
                     ))}
@@ -334,7 +344,7 @@ const AnnuityClub = () => {
               ))}
             </div>
 
-            <div className="annuity-cta-section">
+            <div className="annuity-cta-section card-modern">
               <h2>Ready to Start Your Finance Journey?</h2>
               <p>
                 Join our community of aspiring finance professionals and start
@@ -371,13 +381,13 @@ const AnnuityClub = () => {
               {events.map((event, index) => (
                 <div
                   key={index}
-                  className={`annuity-event-card ${event.status}`}
+                  className={`annuity-event-card card-modern ${event.status}`}
                   data-aos="fade-up"
                   data-aos-delay={index * 200}
                 >
                   <div className="event-header">
                     <h3>{event.title}</h3>
-                    <span className={`event-status ${event.status}`}>
+                    <span className={`event-status btn ${event.status}`}>
                       {event.status === "upcoming"
                         ? "Upcoming"
                         : event.status === "ongoing"
@@ -386,8 +396,20 @@ const AnnuityClub = () => {
                     </span>
                   </div>
                   <div className="event-details">
-                    <span className="event-date">{event.date}</span>
-                    <span className="event-type">{event.type}</span>
+                    <span 
+                      style={
+                        {
+                          "background": 'rgba(255, 255, 255, 0.1)'
+                        }
+                      }
+                    >{event.date}</span>
+                    <span 
+                    style={
+                        {
+                          "background": 'rgba(255, 255, 255, 0.1)'
+                        }
+                      }
+                    >{event.type}</span>
                   </div>
                   <p>{event.description}</p>
                 </div>
@@ -397,19 +419,19 @@ const AnnuityClub = () => {
             <div className="upcoming-workshops">
               <h2>Regular Activities</h2>
               <div className="workshops-grid">
-                <div className="workshop-item" data-aos="fade-right">
+                <div className="workshop-item card-modern" data-aos="fade-right">
                   <h4>Weekly Trading Sessions</h4>
                   <p>
                     Live market analysis and trading discussions every Friday
                   </p>
                 </div>
-                <div className="workshop-item" data-aos="fade-up">
+                <div className="workshop-item card-modern" data-aos="fade-up">
                   <h4>Finance Case Studies</h4>
                   <p>
                     Real-world corporate finance case analysis and solutions
                   </p>
                 </div>
-                <div className="workshop-item" data-aos="fade-left">
+                <div className="workshop-item card-modern" data-aos="fade-left">
                   <h4>Investment Challenges</h4>
                   <p>
                     Monthly portfolio management and investment competitions
@@ -431,7 +453,7 @@ const AnnuityClub = () => {
               {team.map((member, index) => (
                 <div
                   key={index}
-                  className="annuity-team-card"
+                  className="annuity-team-card card-modern"
                   data-aos="zoom-in"
                   data-aos-delay={index * 200}
                 >
@@ -440,6 +462,8 @@ const AnnuityClub = () => {
                       src={member.image}
                       alt={member.name}
                       className="team-member-image"
+                      width={100}
+                      height={100}
                     />
                     <div className="team-overlay">
                       <div className="team-social">
@@ -478,7 +502,7 @@ const AnnuityClub = () => {
               ))}
             </div>
 
-            <div className="join-team-section">
+            <div className="join-team-section card-modern">
               <h2>Want to Join Our Team?</h2>
               <p>
                 We&apos;re always looking for passionate individuals to help grow our
@@ -486,7 +510,7 @@ const AnnuityClub = () => {
               </p>
               <a
                 href="mailto:annuity@iitgn.ac.in?subject=Team Application"
-                className="btn annuity-btn-primary"
+                className="btn"
               >
                 Apply to Join
               </a>

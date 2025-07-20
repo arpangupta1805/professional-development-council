@@ -17,7 +17,7 @@ const PastTeam = () => {
 
       </Head>
       <header id="page-header">
-        <div className="page-heading">
+        <div className="page-heading hero-content">
           <h2>Past Secretaries</h2>
         </div>
       </header>

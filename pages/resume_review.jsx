@@ -12,7 +12,7 @@ const Contact = () => {
 
       </Head>
       <header id="page-header">
-        <div className="page-heading">
+        <div className="page-heading hero-content">
           <h2>Resume Review</h2>
         </div>
       </header>

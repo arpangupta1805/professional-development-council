@@ -61,12 +61,7 @@ export default function Home() {
     },
   ];
 
-  const stats = [
-    { number: "500+", label: "Students Placed" },
-    { number: "150+", label: "Partner Companies" },
-    { number: "95%", label: "Placement Rate" },
-    { number: "50+", label: "Events Conducted" },
-  ];
+
 
   return (
     <div className="main-container">
@@ -93,8 +88,8 @@ export default function Home() {
       </Head>
 
       {/* Hero Section */}
-      <header id="head">
-        <div className={`hero-content ${isVisible ? "fade-in-up" : ""}`}>
+      <header id="head" className="hero-section">
+        <div className={`hero-content glass-container glass-shine ${isVisible ? "fade-in-up" : ""}`}>
           <h1>Professional Development Council</h1>
           <p className="subtitle">
             Your Gateway to Career Success at IIT Gandhinagar
@@ -151,22 +146,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="stats-section" data-aos="fade-up">
-          <div className="stats-grid">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="stat-item"
-                data-aos="zoom-in"
-                data-aos-delay={index * 100}
-              >
-                <h3>{stat.number}</h3>
-                <p>{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+
 
         {/* Features Section */}
         <section className="page-section" data-aos="fade-up">
@@ -177,7 +157,7 @@ export default function Home() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="feature-card"
+                className="feature-card glass-card"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
@@ -252,7 +232,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="feature-section" data-aos="fade-up">
+        <section className="card-modern" data-aos="fade-up">
           <div className="row">
             <div className="col-md-8">
               <h2>Ready to kickstart your career journey?</h2>

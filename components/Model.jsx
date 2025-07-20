@@ -8,7 +8,7 @@ const Model = ({ event, isOpen, onClose }) => {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={e => e.stopPropagation()}>
+      <div className="card-modern overflow-scroll" onClick={e => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}>×</button>
         <h2>{event.EventName}</h2>
         <p>Event Date: {event.date}</p>

@@ -4,15 +4,13 @@ import { EventsData } from '../data/EventsData';
 import Modal from './Model';
 
 const ImageCarousel = () => {
-  const initialDisplayCount = 3;
+  const initialDisplayCount = 6;
   const [displayCount, setDisplayCount] = useState(initialDisplayCount);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const announcements = EventsData.filter(event => event.announce === "true");
 
-  const loadMoreAnnouncements = () => {
-    setDisplayCount(displayCount + 3);
-  };
+
 
   const openModal = (event) => {
     setSelectedEvent(event);
@@ -29,8 +27,8 @@ const ImageCarousel = () => {
       <div className="card-container">
         <div className="row">
           {announcements.slice(0, displayCount).map((item, index) => (
-            <div className='col-md-4' key={index}>
-              <div className="card-item">
+            <div className='col-md-4 p-2' key={index}>
+              <div className="card-modern">
                 <div className="card-item-img">
                   <a onClick={() => openModal(item)}>
                     <Image className='Image-general' src={item.image || "/assets/images/default.jpg"} alt={item.EventName} width={700} height={700} />
@@ -47,11 +45,11 @@ const ImageCarousel = () => {
         </div>
       </div>
 
-      {displayCount < announcements.length &&
+      {/* {displayCount < announcements.length &&
         <div className="announcements-btn">
           <button className="read-button" onClick={loadMoreAnnouncements}>Load More</button>
         </div>
-      }
+      } */}
 
       <Modal event={selectedEvent} isOpen={isModalOpen} onClose={closeModal} />
     </div>

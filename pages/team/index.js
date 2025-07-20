@@ -10,14 +10,14 @@ const Team = () => {
     AOS.init();
   }, []);
   return (
-    <div className="main-container">
+    <div className="main-container team-page">
       <Head>
         <title>Team | Current Team</title>
         <meta name="description" content="" />
       </Head>
       <header id="page-header">
-        <div className="page-heading">
-          <h2>Team</h2>
+        <div className="page-heading hero-content">
+          <h2>Current Team</h2>
         </div>
       </header>
 

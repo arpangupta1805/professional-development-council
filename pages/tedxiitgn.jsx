@@ -3,7 +3,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import TEDxLogo from "../public/assets/images/TEDx_Logo_Short.png";
 
 const TEDxIITGandhinagar = () => {
@@ -68,12 +67,6 @@ const TEDxIITGandhinagar = () => {
     },
   ];
 
-  const stats = [
-    { number: "5+", label: "Years of Impact", icon: "🎯" },
-    { number: "30+", label: "Inspiring Speakers", icon: "🎤" },
-    { number: "2000+", label: "Lives Touched", icon: "❤️" },
-    { number: "1M+", label: "Video Views", icon: "👁️" },
-  ];
 
   const values = [
     {
@@ -168,14 +161,13 @@ const TEDxIITGandhinagar = () => {
       </section>
 
       <div className="page-container">
-        {/* Navigation Tabs */}
+        
         <section className="tedx-nav-section" data-aos="fade-up">
           <div className="tedx-nav-tabs">
             {[
               { id: "about", label: "About TEDx", icon: "" },
               { id: "events", label: "Our Events", icon: "" },
-              { id: "speakers", label: "Speakers", icon: "" },
-              { id: "impact", label: "Our Impact", icon: "" },
+              { id: "speakers", label: "Speakers", icon: "" }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -204,7 +196,7 @@ const TEDxIITGandhinagar = () => {
 
             <div className="row">
               <div className="col-md-6">
-                <div className="tedx-content-card">
+                <div className="tedx-content-card card-modern">
                   <h2>What is TED?</h2>
                   <p>
                     TED is a nonprofit organization devoted to Ideas Worth
@@ -230,8 +222,16 @@ const TEDxIITGandhinagar = () => {
               </div>
 
               <div className="col-md-6">
-                <div className="tedx-content-card">
-                  <h2>TEDxIITGandhinagar</h2>
+                <div className="tedx-content-card card-modern">
+                  <div className="tedx-image-container mb-4">
+                    <Image
+                      src={TEDxLogo}
+                      className="tedx-main-image"
+                      alt="TEDxIITGandhinagar Event"
+                      width={400}
+                      height={300}
+                    />
+                  </div>
                   <p>
                     In the spirit of ideas worth spreading, TEDx is a program of
                     local, self-organized events that bring people together to
@@ -242,15 +242,7 @@ const TEDxIITGandhinagar = () => {
                     speakers to spark deep discussion and connection within our
                     academic community and beyond.
                   </p>
-                  <div className="tedx-image-container">
-                    <Image
-                      src={TEDxLogo}
-                      className="tedx-main-image"
-                      alt="TEDxIITGandhinagar Event"
-                      width={400}
-                      height={300}
-                    />
-                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -262,7 +254,7 @@ const TEDxIITGandhinagar = () => {
                 {values.map((value, index) => (
                   <div
                     key={index}
-                    className="tedx-value-card"
+                    className="tedx-value-card card-modern"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
@@ -287,19 +279,46 @@ const TEDxIITGandhinagar = () => {
               {events.map((event, index) => (
                 <div
                   key={index}
-                  className={`tedx-event-card ${event.status}`}
+                  className={`tedx-event-card card-modern ${event.status}`}
                   data-aos="fade-up"
                   data-aos-delay={index * 200}
                 >
                   <div className="event-year">{event.year}</div>
                   <div className="event-content">
                     <h3>{event.theme}</h3>
-                    <div className="event-details">
-                      <span className="event-date">📅 {event.date}</span>
-                      <span className="event-speakers">
-                        🎤 {event.speakers} Speakers
+                    <div className="event-detail mb-3">
+                      <span 
+                      className="glass-container"
+                      style={
+                        {
+                          "padding": '6px',
+                          "borderRadius": '10px',
+                          "marginRight": '10px',
+                        }
+                      }
+                      >{event.date}</span>
+                      <span
+                       className="glass-container"
+                       style={
+                        {
+                          "padding": '6px',
+                          "borderRadius": '10px',
+                          "marginRight": '10px',
+                        }
+                      }
+                       >
+                         {event.speakers} Speakers
                       </span>
-                      <span className="event-audience">
+                      <span 
+                      className="glass-container"
+                        style={
+                        {
+                          "padding": '6px',
+                          "borderRadius": '10px',
+                          "marginRight": '10px',
+                        }
+                      }
+                    >
                         👥 {event.audience} Attendees
                       </span>
                     </div>
@@ -326,7 +345,7 @@ const TEDxIITGandhinagar = () => {
               {speakers.map((speaker, index) => (
                 <div
                   key={index}
-                  className="tedx-speaker-card"
+                  className="tedx-speaker-card card-modern"
                   data-aos="zoom-in"
                   data-aos-delay={index * 100}
                 >
@@ -350,7 +369,7 @@ const TEDxIITGandhinagar = () => {
               ))}
             </div>
 
-            <div className="tedx-speaker-cta">
+            <div className="tedx-speaker-cta card-modern">
               <h3>Want to speak at TEDxIITGandhinagar?</h3>
               We&apos;re always looking for inspiring speakers with ideas worth
               spreading. We&apos;re always looking for inspiring speakers with
@@ -369,90 +388,9 @@ const TEDxIITGandhinagar = () => {
           </section>
         )}
 
-        {/* Impact Section */}
-        {activeTab === "impact" && (
-          <section className="tedx-content-section" data-aos="fade-up">
-            <div className="section-heading">
-              <h1>Our Impact</h1>
-            </div>
-
-            <div className="tedx-impact-grid">
-              <div className="tedx-impact-card" data-aos="fade-right">
-                <h2>🌍 Global Reach</h2>
-                <p>
-                  Our talks have reached audiences worldwide, inspiring change
-                  across continents. Through online platforms, our ideas
-                  continue to spread long after the event ends.
-                </p>
-                <div className="impact-metrics">
-                  <div className="metric">
-                    <span className="metric-number">1M+</span>
-                    <span className="metric-label">Video Views</span>
-                  </div>
-                  <div className="metric">
-                    <span className="metric-number">50+</span>
-                    <span className="metric-label">Countries Reached</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="tedx-impact-card" data-aos="fade-left">
-                <h2>🎓 Student Engagement</h2>
-                <p>
-                  We&apos;ve inspired thousands of students to pursue their
-                  passions, start initiatives, and become leaders in their
-                  fields. Our events catalyze action and innovation. and become
-                  leaders in their fields. Our events catalyze action and
-                  innovation.
-                </p>
-                <div className="impact-metrics">
-                  <div className="metric">
-                    <span className="metric-number">2000+</span>
-                    <span className="metric-label">Students Inspired</span>
-                  </div>
-                  <div className="metric">
-                    <span className="metric-number">100+</span>
-                    <span className="metric-label">Projects Started</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="tedx-testimonials">
-              <h2>What People Say</h2>
-              <div className="testimonials-grid">
-                <div className="testimonial-card" data-aos="fade-up">
-                  <p>
-                    &ldquo;TEDxIITGandhinagar opened my mind to possibilities I
-                    never imagined. The speakers were truly inspiring.&rdquo;
-                  </p>
-                  <div className="testimonial-author">
-                    <strong>- Priya Sharma</strong>
-                    <span>B.Tech Student, IIT Gandhinagar</span>
-                  </div>
-                </div>
-                <div
-                  className="testimonial-card"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  <p>
-                    &ldquo;The ideas shared here have influenced my research
-                    direction and career path significantly.&rdquo;
-                  </p>
-                  <div className="testimonial-author">
-                    <strong>- Dr. Rajesh Kumar</strong>
-                    <span>Professor, IIT Gandhinagar</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-
         {/* Connect Section */}
         <section className="tedx-connect-section" data-aos="fade-up">
-          <div className="tedx-connect-card">
+          <div className="tedx-connect-card card-modern">
             <h2>Connect With Us</h2>
             <p>
               Join our community of thinkers, innovators, and change-makers.
@@ -464,7 +402,7 @@ const TEDxIITGandhinagar = () => {
                 href="https://www.facebook.com/TEDxIITGn"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="tedx-social-link facebook"
+                className="tedx-social-link facebook btn"
               >
                 <i className="fab fa-facebook-f"></i>
                 <span>Facebook</span>
@@ -473,7 +411,7 @@ const TEDxIITGandhinagar = () => {
                 href="https://www.instagram.com/tedx.iitgandhinagar/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="tedx-social-link instagram"
+                className="tedx-social-link instagram btn"
               >
                 <i className="fab fa-instagram"></i>
                 <span>Instagram</span>
@@ -482,7 +420,7 @@ const TEDxIITGandhinagar = () => {
                 href="https://www.linkedin.com/company/tedxiitgandhinagar/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="tedx-social-link linkedin"
+                className="tedx-social-link linkedin btn"
               >
                 <i className="fab fa-linkedin-in"></i>
                 <span>LinkedIn</span>
@@ -491,14 +429,14 @@ const TEDxIITGandhinagar = () => {
                 href="https://www.youtube.com/@tedxiitgandhinagar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="tedx-social-link youtube"
+                className="tedx-social-link youtube btn"
               >
                 <i className="fab fa-youtube"></i>
                 <span>YouTube</span>
               </a>
               <a
                 href="mailto:tedxiitgandhinagar@iitgn.ac.in"
-                className="tedx-social-link email"
+                className="tedx-social-link email btn"
               >
                 <i className="fas fa-envelope"></i>
                 <span>Email</span>

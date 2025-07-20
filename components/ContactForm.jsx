@@ -88,8 +88,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-us-form">
-      {message && <div className="success-message">{message}</div>}
+    <div className="contact-us-form contact-form glass-container">
+      {message && <div className="success-message glass-card">{message}</div>}
 
       {error && (
         <div
