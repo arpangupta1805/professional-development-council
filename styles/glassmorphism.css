@@ -11,7 +11,7 @@ body {
 /* Override any existing background colors */
 .main-container {
   background: transparent !important;
-  padding: 2rem 1rem;
+  padding: 0rem !important;
   min-height: calc(100vh - 70px);
 }
 

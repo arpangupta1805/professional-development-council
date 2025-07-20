@@ -112,7 +112,7 @@ const Events = () => {
         {upcomingEvents.length > 0 && (
           <section className="page-section" data-aos="fade-up">
             <div className="section-heading">
-              <h1>🌟 Featured Events</h1>
+              <h1>Featured Events</h1>
             </div>
             <div className="row">
               {upcomingEvents.map((event, index) => (
@@ -128,27 +128,7 @@ const Events = () => {
                         marginBottom: "var(--space-md)",
                       }}
                     >
-                      <div
-                        style={{
-                          fontSize: "2rem",
-                          marginBottom: "var(--space-sm)",
-                        }}
-                      >
-                        {getEventTypeIcon(event.EventName, event.description)}
-                      </div>
-                      <span
-                        style={{
-                          background: "var(--gradient-primary)",
-                          color: "white",
-                          padding: "var(--space-xs) var(--space-sm)",
-                          borderRadius: "var(--radius-md)",
-                          fontSize: "0.75rem",
-                          fontWeight: "600",
-                          textTransform: "uppercase",
-                        }}
-                      >
-                        Featured
-                      </span>
+                      
                     </div>
                     <h3
                       style={{
@@ -166,7 +146,7 @@ const Events = () => {
                         marginBottom: "var(--space-md)",
                       }}
                     >
-                      📅 {formatDate(event.date)}
+                       {formatDate(event.date)}
                     </p>
                     <p style={{ textAlign: "center", fontSize: "0.9rem" }}>
                       {event.description.substring(0, 120)}...
@@ -197,7 +177,7 @@ const Events = () => {
           <div className=" card-modern flex ">
             <div className="filter-container-item mb-4">
               <label htmlFor="year-filter" style={{ fontWeight: "600" }}>
-                📅 Academic Year:
+                Academic Year:
               </label>
               <select
                 id="year-filter"
@@ -215,7 +195,7 @@ const Events = () => {
 
             <div className="search-container">
               <label htmlFor="search-input" style={{ fontWeight: "600" }}>
-                🔍 Search Events:
+                Search Events:
               </label>
               <input
                 id="search-input"
@@ -302,7 +282,6 @@ const Events = () => {
                                 gap: "var(--space-xs)",
                               }}
                             >
-                              <span>📅</span>
                               <span
                                 style={{
                                   color: "var(--gray-600)",
@@ -494,7 +473,7 @@ const Events = () => {
               }}
             >
               <Link href="/contact" className="btn btn-primary">
-                📧 Subscribe to Updates
+               Subscribe to Updates
               </Link>
               <a
                 href="https://www.linkedin.com/company/professional-development-council-iit-gandhinagar/"
@@ -502,7 +481,7 @@ const Events = () => {
                 rel="noopener noreferrer"
                 className="btn btn-secondary"
               >
-                💼 Follow on LinkedIn
+                Follow on LinkedIn
               </a>
             </div>
           </div>

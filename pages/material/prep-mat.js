@@ -274,7 +274,6 @@ const PrepMat = () => {
               <p>Continue your preparation journey</p>
             </div>
             <div className="achievement-badge card-modern">
-              <span className="badge-icon">🎯</span>
               <div className="badge-content">
                 <span className="badge-title">Progress</span>
                 <span className="badge-subtitle">
@@ -304,7 +303,7 @@ const PrepMat = () => {
                 {[25, 50, 75, 100].map((milestone) => (
                   <div
                     key={milestone}
-                    className={`milestone ${progressPercentage >= milestone ? "completed" : ""}`}
+                    className={`${progressPercentage >= milestone ? "completed" : ""}`}
                     style={{ left: `${milestone}%` }}
                   >
                     <span className="milestone-label">{milestone}%</span>

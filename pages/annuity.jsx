@@ -332,7 +332,9 @@ const AnnuityClub = () => {
                           {
                             'border': '1px solid gray',
                             'borderRadius': '10px',
-                            'padding' : '5px'
+                            'padding' : '5px',
+                            'borderColor' : '#36609b',
+                            'fontSize': '12px'
                           }
                         }
                       >

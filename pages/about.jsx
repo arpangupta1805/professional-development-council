@@ -132,7 +132,7 @@ const About = () => {
           <div className="row">
             <div className="col-md-6">
               <div className="about-content">
-                <h2>🏛️ About IIT Gandhinagar</h2>
+                <h2>About IIT Gandhinagar</h2>
                 <p>
                   Established in 2008, IIT Gandhinagar stands as a beacon of
                   academic excellence and innovation. Located on the banks of
@@ -183,7 +183,7 @@ const About = () => {
             </div>
             <div className="col-md-6" data-aos="fade-left" data-aos-delay="200">
               <div className="about-content">
-                <h2>🚀 About Professional Development Council</h2>
+                <h2>About Professional Development Council</h2>
                 <p>
                   Welcome to the Professional Development Council (PDC) at IIT
                   Gandhinagar! We are your dedicated partners in transforming
@@ -285,14 +285,6 @@ const About = () => {
                     marginBottom: "var(--space-lg)",
                   }}
                 >
-                  <div
-                    style={{
-                      fontSize: "3rem",
-                      marginBottom: "var(--space-md)",
-                    }}
-                  >
-                    💰
-                  </div>
                   <h3 style={{ color: "var(--primary-600)" }}>Annuity Club</h3>
                 </div>
                 <p>
@@ -321,14 +313,6 @@ const About = () => {
                     marginBottom: "var(--space-lg)",
                   }}
                 >
-                  <div
-                    style={{
-                      fontSize: "3rem",
-                      marginBottom: "var(--space-md)",
-                    }}
-                  >
-                    🎤
-                  </div>
                   <h3 style={{ color: "var(--primary-600)" }}>
                     TEDxIITGandhinagar
                   </h3>
@@ -440,10 +424,10 @@ const About = () => {
               }}
             >
               <Link href="/contact" className="btn btn-primary">
-                🚀 Get Started
+                Get Started
               </Link>
               <Link href="/material/prep-mat" className="btn btn-secondary">
-                📖 Explore Resources
+                Explore Resources
               </Link>
             </div>
           </div>

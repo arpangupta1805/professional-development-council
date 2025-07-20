@@ -268,7 +268,7 @@ const ContactForm = () => {
               Sending Message...
             </>
           ) : (
-            <>📤 Send Message</>
+            <> Send Message</>
           )}
         </button>
 

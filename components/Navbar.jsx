@@ -175,7 +175,7 @@ const Navbar = () => {
                   onClick={closeMenu}
                   role="menuitem"
                 >
-                  📚 PrepMat
+                  PrepMat
                 </Link>
               ) : (
                 <button
@@ -190,7 +190,7 @@ const Navbar = () => {
                     cursor: "pointer",
                   }}
                 >
-                  📚 PrepMat (Login Required)
+                  PrepMat (Login Required)
                 </button>
               )}
               {user ? (
@@ -200,7 +200,7 @@ const Navbar = () => {
                   onClick={closeMenu}
                   role="menuitem"
                 >
-                  🎥 Placement Talks
+                  Placement Talks
                 </Link>
               ) : (
                 <button
@@ -215,7 +215,7 @@ const Navbar = () => {
                     cursor: "pointer",
                   }}
                 >
-                  🎥 Placement Talks (Login Required)
+                  Placement Talks (Login Required)
                 </button>
               )}
               {user ? (
@@ -227,7 +227,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   role="menuitem"
                 >
-                  🔗 External Opportunities
+                   External Opportunities
                 </a>
               ) : (
                 <button
@@ -245,7 +245,7 @@ const Navbar = () => {
                     cursor: "pointer",
                   }}
                 >
-                  🔗 External Opportunities (Login Required)
+                   External Opportunities (Login Required)
                 </button>
               )}
             </div>
@@ -266,7 +266,7 @@ const Navbar = () => {
                 onClick={closeMenu}
                 role="menuitem"
               >
-                💰 Annuity Club
+                Annuity Club
               </Link>
               <Link
                 href="/tedxiitgn"
@@ -274,7 +274,7 @@ const Navbar = () => {
                 onClick={closeMenu}
                 role="menuitem"
               >
-                🎤 TEDxIITGandhinagar
+                TEDxIITGandhinagar
               </Link>
             </div>
           </div>

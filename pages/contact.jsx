@@ -231,7 +231,7 @@ const Contact = () => {
                           fontWeight: "500",
                         }}
                       >
-                        📧 {contact.email}
+                        {contact.email}
                       </a>
                     </div>
                   ))}
@@ -256,7 +256,7 @@ const Contact = () => {
                         padding: "var(--space-xs) var(--space-sm)",
                       }}
                     >
-                      💼 LinkedIn
+                      LinkedIn
                     </a>
                     <a
                       href="https://www.instagram.com/pdc_iitgn"
@@ -268,7 +268,7 @@ const Contact = () => {
                         padding: "var(--space-xs) var(--space-sm)",
                       }}
                     >
-                      📸 Instagram
+                      Instagram
                     </a>
                     <a
                       href="https://www.facebook.com/pdcIITGN/"
@@ -280,7 +280,7 @@ const Contact = () => {
                         padding: "var(--space-xs) var(--space-sm)",
                       }}
                     >
-                      📘 Facebook
+                      Facebook
                     </a>
                   </div>
                 </div>
@@ -349,7 +349,7 @@ const Contact = () => {
                 href="mailto:pdc.secretary@iitgn.ac.in?subject=Inquiry from Website"
                 className="btn btn-primary"
               >
-                📧 Send Direct Email
+                Send Direct Email
               </a>
               <a
                 href="https://www.linkedin.com/company/professional-development-council-iit-gandhinagar/"
@@ -357,7 +357,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="btn btn-secondary"
               >
-                💼 Connect on LinkedIn
+                Connect on LinkedIn
               </a>
             </div>
           </div>
@@ -368,7 +368,7 @@ const Contact = () => {
           <div className="row">
             <div className="col-md-6">
               <div className="card-modern">
-                <h3>🏛️ Visit Our Office</h3>
+                <h3>Visit Our Office</h3>
                 <div style={{ marginBottom: "var(--space-lg)" }}>
                   <h4 style={{ color: "var(--primary-600)", fontSize: "1rem" }}>
                     Location
@@ -399,7 +399,7 @@ const Contact = () => {
             </div>
             <div className="col-md-6">
               <div className="card-modern">
-                <h3>💡 Pro Tips</h3>
+                <h3>Pro Tips</h3>
                 <ul
                   style={{
                     listStyle: "none",
@@ -417,7 +417,7 @@ const Contact = () => {
                       backgroundColor: 'black'
                     }}
                   >
-                    <strong>🎯 Be Specific:</strong> Include details about your
+                    <strong>Be Specific:</strong> Include details about your
                     query to get faster, more accurate responses.
                   </li>
                   <li
@@ -429,7 +429,7 @@ const Contact = () => {
                       backgroundColor: 'black'
                     }}
                   >
-                    <strong>📧 Use IITGN Email:</strong> Contact us from your
+                    <strong>Use IITGN Email:</strong> Contact us from your
                     @iitgn.ac.in email for faster verification.
                   </li>
                   <li
@@ -441,7 +441,7 @@ const Contact = () => {
                       backgroundColor: 'black'
                     }}
                   >
-                    <strong>⏰ Response Time:</strong> We typically respond
+                    <strong>Response Time:</strong> We typically respond
                     within 24-48 hours during working days.
                   </li>
                 </ul>
