@@ -8,20 +8,24 @@ import "../styles/responsive.css";
 import "../styles/events.css"; // Import the global CSS file here
 import "../styles/prepmat.css"; // Import the PrepMat professional styles
 import "aos/dist/aos.css"; // Import AOS CSS for animations
+import { Analytics } from "@vercel/analytics/next" // From web Analytics
 
 function MyApp({ Component, pageProps }) {
   return (
-    <GoogleAuth>
-      <AuthProvider>
-        <AuthWrapper>
-          <div>
-            <Navbar />
-            <Component {...pageProps} />
-            <Footer />
-          </div>
-        </AuthWrapper>
-      </AuthProvider>
-    </GoogleAuth>
+    <>
+      <GoogleAuth>
+        <AuthProvider>
+          <AuthWrapper>
+            <div>
+              <Navbar />
+              <Component {...pageProps} />
+              <Footer />
+            </div>
+          </AuthWrapper>
+        </AuthProvider>
+      </GoogleAuth>
+      <Analytics />
+    </>
   );
 }
 

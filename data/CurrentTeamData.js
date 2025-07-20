@@ -3,7 +3,7 @@
 export const TeamData =[
   {
     "name": "Aaryan Darad",
-    "image": "./assets/images/IMG_20240225_001511-Photoroom.png-Photoroom - Professional Development Council IITGN.jpeg",
+    "image": "/assets/PastSecy/Aryan_Daryad.jpeg",
     "position": "PDC Secretary",
     "level": "Senior Undergraduate",
     "email": "daradaaryan@iitgn.ac.in",
@@ -14,7 +14,7 @@ export const TeamData =[
   },
   {
     "name": "Mihir Agarwal",
-    "image": "./assets/images/Mihir_Agarwal.jpg",
+    "image": "/assets/images/Mihir_Agarwal.jpg",
     "position": "Special Advisor",
     "level": "Senior Undergraduate",
     "email": "agarwalmihir@iitgn.ac.in",
@@ -25,7 +25,7 @@ export const TeamData =[
   },
   {
     "name": "Siddhi Rajpurohit",
-    "image": "./assets/images/Siddhi_Rajpurohit.jpg",
+    "image": "/assets/images/Siddhi_Rajpurohit.jpg",
     "position": "Special Advisor",
     "level": "Senior Undergraduate",
     "email": "rajpurohitsiddhi@iitgn.ac.in",
@@ -36,7 +36,7 @@ export const TeamData =[
   },
   {
     "name": "Aadya Arora",
-    "image": "./assets/images/Aadya_Arora.png",
+    "image": "/assets/images/Aadya_Arora.png",
     "position": "Coordinator for Career Exposure and Guidance",
     "level": "Junior Undergraduate",
     "email": "aadya.arora@iitgn.ac.in",
@@ -47,7 +47,7 @@ export const TeamData =[
   },
   {
     "name": "Mumuksh Jain",
-    "image": "./assets/images/Mumuksh_Jain.jpg",
+    "image": "/assets/images/Mumuksh_Jain.jpg",
     "position": "Coordinator for Industrial Training and Preparation",
     "level": "Junior Undergraduate",
     "email": "mumuksh.jain@iitgn.ac.in",
@@ -58,7 +58,7 @@ export const TeamData =[
   },
   {
     "name": "Vidhi Shah",
-    "image": "./assets/team/Vidhi Shah.jpg",
+    "image": "/assets/team/Vidhi Shah.jpg",
     "position": "Coordinator for Research and Higher Education",
     "level": "Senior Undergraduate",
     "email": "vidhi.shah@iitgn.ac.in",
@@ -69,7 +69,7 @@ export const TeamData =[
   },
   {
     "name": "Parth Govale",
-    "image": "./assets/images/Parth_Govale.webp",
+    "image": "/assets/images/Parth_Govale.webp",
     "position": "Webmaster",
     "level": "Junior Undergraduate",
     "email": "parth.govale@iitgn.ac.in",
@@ -80,7 +80,7 @@ export const TeamData =[
   },
   {
     "name": "Chandrabhan Patel",
-    "image": "./assets/images/Chandrabhan_Patel.jpg",
+    "image": "/assets/images/Chandrabhan_Patel.jpg",
     "position": "Webmaster",
     "level": "Junior Undergraduate",
     "email": "chandrabhan.patel@iitgn.ac.in",
@@ -91,7 +91,7 @@ export const TeamData =[
   },
   {
     "name": "Jayraj Dulange",
-    "image": "./assets/images/Jayraj_Dulange.jpg",
+    "image": "/assets/images/Jayraj_Dulange.jpg",
     "position": "Webmaster",
     "level": "Junior Undergraduate",
     "email": "jayraj.jayraj@iitgn.ac.in",
@@ -102,7 +102,7 @@ export const TeamData =[
   },
   {
     "name": "Anmol Bhargava",
-    "image": "./assets/images/Anmol_Bhargava.jpg",
+    "image": "/assets/images/Anmol_Bhargava.jpg",
     "position": "General Council Member",
     "level": "Junior Undergraduate",
     "email": "anmol.bhargava@iitgn.ac.in",
@@ -113,7 +113,7 @@ export const TeamData =[
   },
   {
     "name": "Mayank Kumbhat ",
-    "image": "./assets/images/Mayank Kumbhat.jpg",
+    "image": "/assets/images/Mayank Kumbhat.jpg",
     "position": "General Council Member",
     "level": "Sophomore",
     "email": "23110204@iitgn.ac.in",
@@ -124,7 +124,7 @@ export const TeamData =[
   },
   {
     "name": "Ayush Umare",
-    "image": "./assets/images/Ayush_Umare.jpg",
+    "image": "/assets/images/Ayush_Umare.jpg",
     "position": "General Council Member",
     "level": "Sophomore",
     "email": "23110346@iitgn.ac.in",
@@ -135,7 +135,7 @@ export const TeamData =[
   },
   {
     "name": "Aditya Mehta",
-    "image": "./assets/images/Aditya_Mehta_1.png",
+    "image": "/assets/images/Aditya_Mehta_1.png",
     "position": "General Council Member",
     "level": "Junior Undergraduate",
     "email": "mehta.aditya@iitgn.ac.in",
@@ -146,7 +146,7 @@ export const TeamData =[
   },
   {
     "name": "Akshat Mohan",
-    "image": "./assets/images/Akshat_Mohan.jpg",
+    "image": "/assets/images/Akshat_Mohan.jpg",
     "position": "General Council Member",
     "level": "Postgraduate",
     "email": "akshat.mohan@iitgn.ac.in",
@@ -157,7 +157,7 @@ export const TeamData =[
   },
   {
     "name": "Vardayini Agrawal",
-    "image": "./assets/images/d6ef2188-973b-42c8-a642-ee0803357bf8 - Vardayini Agrawal 23110353.jpeg",
+    "image": "/assets/images/d6ef2188-973b-42c8-a642-ee0803357bf8 - Vardayini Agrawal 23110353.jpeg",
     "position": "General Council Member",
     "level": "Sophomore",
     "email": "23110353@iitgn.ac.in",
@@ -168,7 +168,7 @@ export const TeamData =[
   },
   {
     "name": "Aditya Mehta ",
-    "image": "./assets/images/Aditya_Mehta_2.jpeg",
+    "image": "/assets/images/Aditya_Mehta_2.jpeg",
     "position": "General Council Member",
     "level": "Junior Undergraduate",
     "email": "aditya.mehta@iitgn.ac.in",
@@ -179,7 +179,7 @@ export const TeamData =[
   },
   {
     "name": "Sneha Gautam",
-    "image": "./assets/images/Sneha_Gautam.jpg",
+    "image": "/assets/images/Sneha_Gautam.jpg",
     "position": "General Council Member",
     "level": "Junior Undergraduate",
     "email": "sneha.gautam@iitgn.ac.in",
@@ -190,7 +190,7 @@ export const TeamData =[
   },
   {
     "name": "M. Lakshmi Manasa",
-    "image": "./assets/images/Lakshmi_Manasa.jpg",
+    "image": "/assets/images/Lakshmi_Manasa.jpg",
     "position": "General Council Member",
     "level": "Sophomore",
     "email": "23110193@iitgn.ac.in",
@@ -201,7 +201,7 @@ export const TeamData =[
   },
   {
     "name": "Omkar Rajeev Prabhu",
-    "image": "./assets/images/Omkar_Prabhu.jpg",
+    "image": "/assets/images/Omkar_Prabhu.jpg",
     "position": "General Council Member",
     "level": "Junior Undergraduate",
     "email": "omkar.prabhu@iitgn.ac.in",
@@ -212,7 +212,7 @@ export const TeamData =[
   },
   {
     "name": "Mitali Agrawal",
-    "image": "./assets/images/Mitali_Agrawal.jpg",
+    "image": "/assets/images/Mitali_Agrawal.jpg",
     "position": "General Council Member",
     "level": "Sophomore",
     "email": "23110206@iitgn.ac.in",
@@ -223,7 +223,7 @@ export const TeamData =[
   },
   {
     "name": "Shree Hiwanj",
-    "image": "./assets/images/Shree_Hiwanj.jpg",
+    "image": "/assets/images/Shree_Hiwanj.jpg",
     "position": "General Council Member",
     "level": "Sophomore",
     "email": "23110305@iitgn.ac.in",
@@ -234,7 +234,7 @@ export const TeamData =[
   },
   {
     "name": "Devender Singh",
-    "image": "./assets/images/Devender_Singh.jpg",
+    "image": "/assets/images/Devender_Singh.jpg",
     "position": "Social Media Manager",
     "level": "Postgraduate",
     "email": "devender.singh@iitgn.ac.in",
@@ -245,7 +245,7 @@ export const TeamData =[
   },
   {
     "name": "Nagare Riya Babasaheb",
-    "image": "./assets/images/Riya.png",
+    "image": "/assets/images/Riya.png",
     "position": "Social Media Manager",
     "level": "Sophomore",
     "email": "23110214@iitgn.ac.in",
