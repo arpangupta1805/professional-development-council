@@ -4,11 +4,23 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Head from "next/head";
 import Image from "next/image";
+import useMasonry from "../../hooks/useMasonry";
 
 const Team = () => {
+  const { containerRef, resizeAllGridItems } = useMasonry(TeamData, 4);
+  
   useEffect(() => {
     AOS.init();
   }, []);
+
+  useEffect(() => {
+    // Trigger masonry recalculation after AOS animations
+    const timer = setTimeout(() => {
+      resizeAllGridItems();
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [resizeAllGridItems]);
   return (
     <div className="main-container team-page">
       <Head>
@@ -23,11 +35,11 @@ const Team = () => {
 
       <div className="page-container">
         <section id="team" className="team-area">
-          <div className="row team-items" style={{ justifyContent: "center" }}>
+          <div className="masonry-container" ref={containerRef}>
             {TeamData.map((item, index) => {
               return (
                 <div
-                  className="col-md-3 single-item"
+                  className="masonry-item"
                   key={index}
                   data-aos="fade-up"
                 >

@@ -768,7 +768,21 @@ input::placeholder, textarea::placeholder {
   font-weight: 500 !important;
 }
 
-/* Team cards glass effect - Optimized */
+/* Team cards glass effect - True Masonry Layout */
+.team-area .masonry-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 10px;
+  grid-gap: 20px;
+  padding: 2rem 0;
+  align-items: start;
+}
+
+.team-area .masonry-item {
+  width: 100%;
+  margin-bottom: 0;
+}
+
 .team-area .single-item {
   margin-bottom: 2rem;
 }
