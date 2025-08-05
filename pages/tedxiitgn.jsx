@@ -124,9 +124,16 @@ const TEDxIITGandhinagar = () => {
         <div className="tedx-hero-content">
           <div className="tedx-logo-container" data-aos="zoom-in">
             <div className="tedx-logo-text">
-              <span className="ted-text">TED</span>
+              {/* <span className="ted-text">TED</span>
               <span className="x-text">x</span>
-              <span className="location-text">IITGandhinagar</span>
+              <span className="location-text">IITGandhinagar</span> */}
+              <Image
+                      src={TEDxLogo}
+                      className="tedx-main-image-main"
+                      alt="TEDxIITGandhinagar Event"
+                      width={400}
+                      height={300}
+                    />
             </div>
           </div>
           <h1 data-aos="fade-up" data-aos-delay="300">

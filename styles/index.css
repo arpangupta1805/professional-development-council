@@ -2067,8 +2067,14 @@ p {
   transition: transform var(--transition-normal);
 }
 
-.tedx-main-image:hover {
+
+.tedx-main-image-main:hover {
   transform: scale(1.05);
+}
+.tedx-main-image-main {
+  width: 100%;
+  height: auto;
+  transition: transform var(--transition-normal);
 }
 
 /* Values Section */
