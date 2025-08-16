@@ -9,12 +9,18 @@ const useMasonry = (items, columns = 4) => {
 
     const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
     const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-    const itemContent = item.querySelector('.item');
+    
+    // Look for the main content container - prioritize flip-card-inner for flipped cards
+    let itemContent = item.querySelector('.flip-card-inner');
+    if (!itemContent) {
+      itemContent = item.querySelector('.item');
+    }
     
     if (itemContent) {
+      // Get the actual height of the content
       const itemHeight = itemContent.getBoundingClientRect().height;
       const rowSpan = Math.ceil((itemHeight + rowGap) / (rowHeight + rowGap));
-      item.style.gridRowEnd = `span ${rowSpan}`;
+      item.style.gridRowEnd = `span ${Math.max(rowSpan, 1)}`;
     }
   };
 

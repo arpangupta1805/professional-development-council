@@ -768,6 +768,20 @@ p {
 }
 
 /* Team Cards */
+.team-area .masonry-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 10px;
+  grid-gap: 20px;
+  padding: 2rem 0;
+  align-items: start;
+}
+
+.team-area .masonry-item {
+  width: 100%;
+  margin-bottom: 0;
+}
+
 .team-area .item {
   background: white;
   border-radius: var(--radius-xl);
@@ -842,6 +856,368 @@ p {
 .team-area .info .message a:hover {
   background: var(--primary-700);
   transform: translateY(-2px);
+}
+
+/* Flip Card Styles */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.flip-card-front {
+  position: relative;
+  transition: all 0.6s ease-in-out;
+}
+
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+  min-height: 500px;
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+}
+
+/* When flipped, completely remove front card from layout and show back */
+.flip-card.flipped .flip-card-front {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+
+.flip-card.flipped .flip-card-back {
+  position: relative;
+  opacity: 1;
+}
+
+/* Adjust masonry item to accommodate flip cards */
+.masonry-item {
+  transition: all var(--transition-normal);
+}
+
+/* Fix for Next.js Image component in flip cards */
+.flip-card .team-image {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover;
+}
+
+.flip-card .back-avatar {
+  width: 80px !important;
+  height: 80px !important;
+  object-fit: cover;
+}
+
+/* Ensure front side inherits all original team card styles */
+.flip-card-front .item {
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  height: 100%;
+}
+
+.flip-card-front .item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.flip-card-front .item .thumb {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.flip-card-front .item .thumb img {
+  width: 100%;
+  height: 300px !important;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.flip-card-front .item .thumb .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+  color: white;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.flip-card-front .item:hover .thumb .overlay {
+  opacity: 1;
+}
+
+.flip-card-front .item .thumb .overlay h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: white;
+}
+
+.flip-card-front .item .thumb .overlay p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.4;
+}
+
+.flip-card-front .item:hover .thumb img {
+  transform: scale(1.05);
+}
+
+.flip-card-front .info {
+  padding: var(--space-xl);
+  text-align: center;
+  position: relative;
+}
+
+.flip-card-front .info h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: var(--space-sm);
+}
+
+.flip-card-front .info span {
+  color: var(--primary-600);
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flip-card-front .info .message {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.flip-card-front .info .message a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--primary-600);
+  color: white;
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+}
+
+.flip-card-front .info .message a:hover {
+  background: var(--primary-700);
+  transform: translateY(-2px);
+}
+
+/* Back card content styles */
+.flip-card-back .item.back-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.flip-card-back .item.back-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.back-info {
+  padding: var(--space-xl);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.back-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.back-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.3);
+  margin-bottom: var(--space-md);
+  transition: transform 0.3s ease;
+}
+
+.flip-card-back:hover .back-avatar {
+  transform: scale(1.05);
+}
+
+.back-header h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  color: white;
+}
+
+.back-header span {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.back-description {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin: var(--space-lg) 0;
+}
+
+.back-description p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.95);
+  text-align: left;
+  white-space: pre-line;
+}
+
+.back-footer {
+  margin-top: auto;
+}
+
+.back-footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.back-footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.back-footer .social-links a:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(-2px) scale(1.1);
+}
+
+/* Flip hint styles */
+.flip-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+  font-size: 0.8rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.flip-card-front .flip-hint {
+  color: var(--gray-600);
+}
+
+.flip-card-back .flip-hint {
+  color: rgba(255,255,255,0.8);
+}
+
+.flip-hint i {
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.flip-card:hover .flip-hint {
+  opacity: 1;
+}
+
+/* Responsive adjustments for flip cards */
+@media (max-width: 768px) {
+  .back-description p {
+    font-size: 0.9rem;
+  }
+  
+  .back-header h4 {
+    font-size: 1.2rem;
+  }
+  
+  .back-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .team-area .masonry-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .team-area .masonry-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .team-area .masonry-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Pagination */
