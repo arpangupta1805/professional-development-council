@@ -15,6 +15,8 @@
     "axios": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
+    "firebase": "^12.1.0",
+    "firestore": "^1.1.6",
     "framer-motion": "^12.14.0",
     "next": "^13.4.16",
     "next-auth": "^4.24.11",
