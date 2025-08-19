@@ -1,6 +1,9 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { getHighResGoogleImage } from '../utils/imageProxy';
 
+import { db } from '../firebase';
+import { doc, setDoc } from 'firebase/firestore';
+
 const AuthContext = createContext();
 
 export const useAuth = () => {
@@ -43,98 +46,67 @@ export const AuthProvider = ({ children }) => {
 
       const initializeGoogleSignIn = () => {
         try {
-          if (typeof window !== 'undefined' && window.google && window.google.accounts) {
+          if (typeof window !== "undefined" && window.google && window.google.accounts) {
             window.google.accounts.id.initialize({
               client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
-              callback: (response) => {
+              callback: async (response) => {
                 try {
                   if (!response.credential) {
-                    throw new Error('No credential received from Google');
+                    throw new Error("No credential received from Google");
                   }
 
                   // Decode the JWT token
-                  const payload = JSON.parse(atob(response.credential.split('.')[1]));
-                  
-                  console.log('Google payload:', payload); // Debug log
-                  
+                  const payload = JSON.parse(atob(response.credential.split(".")[1]));
+
                   // Check if email is from @iitgn.ac.in domain
-                  if (payload.email && payload.email.endsWith('@iitgn.ac.in')) {
-                    // Use a higher resolution Google profile image
-                    const profilePicture = payload.picture ? 
-                      getHighResGoogleImage(payload.picture) : 
-                      null;
-                    
+                  if (payload.email && payload.email.endsWith("@iitgn.ac.in")) {
+                    const profilePicture = payload.picture
+                      ? getHighResGoogleImage(payload.picture)
+                      : null;
+
                     const userData = {
                       name: payload.name,
                       email: payload.email,
                       picture: profilePicture,
-                      domain: payload.hd || 'iitgn.ac.in',
+                      domain: payload.hd || "iitgn.ac.in",
                       signInTime: Date.now(),
-                      accessToken: response.credential // Store the credential as access token
+                      accessToken: response.credential, // Store the credential as access token
                     };
-                    
-                    console.log('User data created:', userData); // Debug log
-                    console.log('Profile picture URL:', profilePicture); // Debug log
-                    
+
+                    // Store user data in Firestore
+                    const emailDocRef = doc(db, "emails", payload.email); // Use email as the document ID
+                    await setDoc(emailDocRef, { email: payload.email });
+
+                    console.log("Email stored successfully in Firestore");
+
                     setUser(userData);
-                    localStorage.setItem('pdc_user', JSON.stringify(userData));
+                    localStorage.setItem("pdc_user", JSON.stringify(userData));
                     setLoading(false);
                     resolve(userData);
                   } else {
-                    const errorMsg = 'Only @iitgn.ac.in email addresses are allowed';
+                    const errorMsg = "Only @iitgn.ac.in email addresses are allowed";
                     setError(errorMsg);
                     setLoading(false);
                     reject(new Error(errorMsg));
                   }
                 } catch (error) {
-                  console.error('Authentication error:', error);
+                  console.error("Authentication error:", error);
                   setError(error.message);
                   setLoading(false);
                   reject(error);
                 }
               },
               auto_select: false,
-              cancel_on_tap_outside: false
+              cancel_on_tap_outside: false,
             });
 
-            // Use renderButton instead of prompt for better control
-            const buttonContainer = document.createElement('div');
-            buttonContainer.style.display = 'none';
-            document.body.appendChild(buttonContainer);
-            
-            window.google.accounts.id.renderButton(buttonContainer, {
-              theme: 'outline',
-              size: 'large',
-              width: '100%'
-            });
-            
             // Trigger the sign-in
-            window.google.accounts.id.prompt((notification) => {
-              if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-                // Fallback to manual button click
-                const button = buttonContainer.querySelector('div[role="button"]');
-                if (button) {
-                  button.click();
-                } else {
-                  setError('Unable to initialize Google Sign-In');
-                  setLoading(false);
-                  reject(new Error('Unable to initialize Google Sign-In'));
-                }
-              }
-            });
-            
-            // Clean up
-            setTimeout(() => {
-              if (buttonContainer && buttonContainer.parentNode) {
-                buttonContainer.parentNode.removeChild(buttonContainer);
-              }
-            }, 1000);
-            
+            window.google.accounts.id.prompt();
           } else {
-            throw new Error('Google Identity Services not available');
+            throw new Error("Google Identity Services not available");
           }
         } catch (error) {
-          console.error('Google Sign-In initialization error:', error);
+          console.error("Google Sign-In initialization error:", error);
           setError(error.message);
           setLoading(false);
           reject(error);
@@ -142,30 +114,17 @@ export const AuthProvider = ({ children }) => {
       };
 
       // Check if Google script is already loaded
-      if (typeof window !== 'undefined') {
+      if (typeof window !== "undefined") {
         if (window.google && window.google.accounts) {
           initializeGoogleSignIn();
         } else {
-          // Wait for the script to load
-          let attempts = 0;
-          const maxAttempts = 50; // 5 seconds
-          
-          const checkGoogle = setInterval(() => {
-            attempts++;
-            if (window.google && window.google.accounts) {
-              clearInterval(checkGoogle);
-              initializeGoogleSignIn();
-            } else if (attempts >= maxAttempts) {
-              clearInterval(checkGoogle);
-              const errorMsg = 'Google Identity Services failed to load. Please refresh the page and try again.';
-              setError(errorMsg);
-              setLoading(false);
-              reject(new Error(errorMsg));
-            }
-          }, 100);
+          const errorMsg = "Google Identity Services failed to load. Please refresh the page and try again.";
+          setError(errorMsg);
+          setLoading(false);
+          reject(new Error(errorMsg));
         }
       } else {
-        const errorMsg = 'Browser environment not available';
+        const errorMsg = "Browser environment not available";
         setError(errorMsg);
         setLoading(false);
         reject(new Error(errorMsg));
