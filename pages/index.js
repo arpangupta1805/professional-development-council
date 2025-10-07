@@ -94,14 +94,6 @@ export default function Home() {
           <p className="subtitle">
             Your Gateway to Career Success at IIT Gandhinagar
           </p>
-          <div className="hero-cta">
-            <Link href="/material/prep-mat" className="btn btn-primary">
-              Explore PrepMat
-            </Link>
-            <Link href="/about" className="btn btn-outline">
-              Learn More
-            </Link>
-          </div>
         </div>
       </header>
 
