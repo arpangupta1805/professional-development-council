@@ -246,7 +246,7 @@ const Navbar = () => {
               {user ? (
                 <a
                   target="_blank"
-                  href="https://docs.google.com/spreadsheets/d/1-iZFun1vFNNxXMxtIJM4Sl53TIJQUsXHe6U4nGDqIx0/edit#gid=0"
+                  href="https://docs.google.com/spreadsheets/d/1a2nWrTPgqPat6neif8OI8sSvKnjFH8t25fjEvx4FojU/edit?usp=sharing"
                   className="drop-nav-links"
                   onClick={closeMenu}
                   rel="noopener noreferrer"
