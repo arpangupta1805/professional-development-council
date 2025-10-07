@@ -33,22 +33,15 @@
   --error: #ef4444;
   --info: #06b6d4;
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(
-    135deg,
-    var(--primary-600),
-    var(--primary-700)
-  );
-  --gradient-secondary: linear-gradient(
-    135deg,
-    var(--primary-50),
-    var(--primary-100)
-  );
-  --gradient-hero: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.4),
-    rgba(29, 78, 216, 0.5)
-  );
+  /* Gradients - with Safari fallbacks */
+  --gradient-primary-webkit: -webkit-linear-gradient(135deg, #2563eb, #1d4ed8);
+  --gradient-primary: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  
+  --gradient-secondary-webkit: -webkit-linear-gradient(135deg, #eff6ff, #dbeafe);
+  --gradient-secondary: linear-gradient(135deg, var(--primary-50), var(--primary-100));
+  
+  --gradient-hero-webkit: -webkit-linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(29, 78, 216, 0.5));
+  --gradient-hero: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(29, 78, 216, 0.5));
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -316,6 +309,9 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  background:
+    -webkit-linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(29, 78, 216, 0.5)),
+    url("/assets/images/banner-2.jpg");
   background:
     linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(29, 78, 216, 0.5)),
     url("/assets/images/banner-2.jpg");
@@ -638,6 +634,14 @@ p {
   transform: translateX(-50%);
   width: 120px;
   height: 1px;
+  background: -webkit-linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--primary-300) 25%,
+    var(--primary-500) 50%,
+    var(--primary-300) 75%,
+    transparent 100%
+  );
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -1204,6 +1208,7 @@ p {
   right: 0;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--gray-200);
 }
@@ -3485,5 +3490,73 @@ p {
   }
   .d-lg-flex {
     display: flex !important;
+  }
+}
+
+
+/* Safari-specific fixes for iOS compatibility */
+@supports (-webkit-appearance: none) and (not (appearance: none)) {
+  /* Safari-specific gradient fallbacks */
+  #page-header {
+  }
+  
+  .nav_container {
+  }
+  
+  /* Ensure primary colors are applied when CSS variables fail */
+  .btn-primary {
+  }
+  
+  .feature-card .icon {
+  }
+}
+
+/* Additional iOS Safari fixes */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari specific fixes */
+  .tedx-hero::before,
+  .annuity-hero::before {
+  }
+  
+  body::before {
+  }
+}
+
+/* Safari-specific fixes for iOS compatibility */
+@supports (-webkit-appearance: none) and (not (appearance: none)) {
+  /* Safari-specific gradient fallbacks */
+  #page-header {
+    background: -webkit-linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(29, 78, 216, 0.5)), url("/assets/images/banner-2.jpg") !important;
+  }
+  
+  .nav_container {
+    background: rgba(255, 255, 255, 0.95) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+  
+  /* Ensure primary colors are applied when CSS variables fail */
+  .btn-primary {
+    background: -webkit-linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  }
+  
+  .feature-card .icon {
+    background: rgba(255, 255, 255, 0.1) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+}
+
+/* Additional iOS Safari fixes */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari specific fixes */
+  .tedx-hero::before,
+  .annuity-hero::before {
+    background: -webkit-radial-gradient(center, circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%) !important;
+  }
+  
+  body::before {
+    background: -webkit-radial-gradient(25% 25%, circle, rgba(99, 102, 241, 0.05) 0%, transparent 50%) !important;
   }
 }
