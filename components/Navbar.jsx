@@ -193,6 +193,31 @@ const Navbar = () => {
                   PrepMat (Login Required)
                 </button>
               )}
+              {/* {user ? (
+                <Link
+                  href="https://docs.google.com/spreadsheets/d/1hYLePWpD1F1TyNg5cWxRAAZ4jaLvtYwkcHcAq3PTonk"
+                  className={`drop-nav-links ${router.pathname.includes("prep-mat") ? "drop-nav-links-active" : ""}`}
+                  onClick={closeMenu}
+                  role="menuitem"
+                >
+                  PrepMat-Sheet
+                </Link>
+              ) : (
+                <button
+                  className="drop-nav-links"
+                  onClick={(e) => handleProtectedNavigation(e, "/material/prep-mat")}
+                  role="menuitem"
+                  style={{
+                    border: "none",
+                    background: "transparent",
+                    width: "100%",
+                    textAlign: "left",
+                    cursor: "pointer",
+                  }}
+                >
+                  PrepMat-Sheet (Login Required)
+                </button>
+              )} */}
               {user ? (
                 <Link
                   href="/material/placement-talks"

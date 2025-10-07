@@ -30,13 +30,6 @@ const Contact = () => {
       contact: "IIT Gandhinagar, Palaj, Gandhinagar, Gujarat 382355",
       action: "https://goo.gl/maps/YourLocationLink",
     },
-    {
-      icon: "🕒",
-      title: "Office Hours",
-      description: "We're available during these hours",
-      contact: "Monday - Friday: 9:00 AM - 6:00 PM",
-      action: null,
-    },
   ];
 
   const teamContacts = [
@@ -363,12 +356,10 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Office Hours and Location */}
         <section className="page-section" data-aos="fade-up">
           <div className="row">
             <div className="col-md-6">
               <div className="card-modern">
-                <h3>Visit Our Office</h3>
                 <div style={{ marginBottom: "var(--space-lg)" }}>
                   <h4 style={{ color: "var(--primary-600)", fontSize: "1rem" }}>
                     Location
@@ -383,18 +374,7 @@ const Contact = () => {
                     Gujarat 382355, India
                   </p>
                 </div>
-                <div>
-                  <h4 style={{ color: "var(--primary-600)", fontSize: "1rem" }}>
-                    Office Hours
-                  </h4>
-                  <p className="btn text-left">
-                    Monday - Friday: 9:00 AM - 6:00 PM
-                    <br />
-                    Saturday: 10:00 AM - 2:00 PM
-                    <br />
-                    Sunday: Closed
-                  </p>
-                </div>
+                
               </div>
             </div>
             <div className="col-md-6">
@@ -419,30 +399,6 @@ const Contact = () => {
                   >
                     <strong>Be Specific:</strong> Include details about your
                     query to get faster, more accurate responses.
-                  </li>
-                  <li
-                    style={{
-                      marginBottom: "var(--space-md)",
-                      padding: "var(--space-sm)",
-                      borderRadius: "var(--radius-md)",
-                      borderLeft: "4px solid var(--primary-500)",
-                      backgroundColor: 'black'
-                    }}
-                  >
-                    <strong>Use IITGN Email:</strong> Contact us from your
-                    @iitgn.ac.in email for faster verification.
-                  </li>
-                  <li
-                    style={{
-                      marginBottom: "var(--space-md)",
-                      padding: "var(--space-sm)",
-                      borderRadius: "var(--radius-md)",
-                      borderLeft: "4px solid var(--primary-500)",
-                      backgroundColor: 'black'
-                    }}
-                  >
-                    <strong>Response Time:</strong> We typically respond
-                    within 24-48 hours during working days.
                   </li>
                 </ul>
               </div>

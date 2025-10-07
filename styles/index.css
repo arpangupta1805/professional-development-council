@@ -260,16 +260,7 @@ p {
   overflow: hidden;
 }
 
-#head::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1;
-}
+
 
 .hero-content {
   position: relative;
@@ -321,15 +312,6 @@ p {
   position: relative;
 }
 
-#page-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
-}
 
 .page-heading {
   position: relative;
@@ -614,43 +596,9 @@ p {
   display: inline-block;
 }
 
-.section-heading h1::before {
-  content: "";
-  position: absolute;
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: var(--gradient-primary);
-  border-radius: 2px;
-}
 
-.section-heading h1::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 1px;
-  background: -webkit-linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--primary-300) 25%,
-    var(--primary-500) 50%,
-    var(--primary-300) 75%,
-    transparent 100%
-  );
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--primary-300) 25%,
-    var(--primary-500) 50%,
-    var(--primary-300) 75%,
-    transparent 100%
-  );
-}
+
+
 
 /* Page Sections */
 .page-section {
@@ -1465,16 +1413,6 @@ p {
   position: relative;
 }
 
-.footer-widget-heading h3::after {
-  content: "";
-  position: absolute;
-  bottom: -var(--space-sm);
-  left: 0;
-  width: 40px;
-  height: 2px;
-  background: var(--primary-600);
-}
-
 .footer-widget ul {
   list-style: none;
 }
@@ -1761,25 +1699,6 @@ p {
   overflow: hidden;
 }
 
-.tedx-hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: -webkit-radial-gradient(
-    center,
-    circle,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
-}
 
 .tedx-hero-overlay {
   position: absolute;
@@ -2159,19 +2078,6 @@ p {
   overflow: hidden;
 }
 
-.tedx-event-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background: linear-gradient(45deg, #e74c3c, #c0392b);
-}
-
-.tedx-event-card.upcoming::before {
-  background: linear-gradient(45deg, #f39c12, #e67e22);
-}
 
 .tedx-event-card:hover {
   transform: translateX(10px);
@@ -2390,16 +2296,6 @@ p {
   position: relative;
 }
 
-.testimonial-card::before {
-  content: '"';
-  position: absolute;
-  top: -20px;
-  left: var(--space-lg);
-  font-size: 5rem;
-  color: #e74c3c;
-  font-weight: 900;
-  opacity: 0.3;
-}
 
 .testimonial-card:hover {
   transform: translateY(-5px);
@@ -2587,25 +2483,7 @@ p {
   overflow: hidden;
 }
 
-.annuity-hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: -webkit-radial-gradient(
-    center,
-    circle,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
-}
+
 
 .annuity-hero-overlay {
   position: absolute;
@@ -2806,15 +2684,7 @@ p {
   overflow: hidden;
 }
 
-.annuity-stat-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--accent-color, #ffd700);
-}
+
 
 .annuity-stat-item:hover {
   transform: translateY(-5px);
@@ -3075,23 +2945,7 @@ p {
   overflow: hidden;
 }
 
-.annuity-event-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background: linear-gradient(45deg, #ffd700, #ffed4e);
-}
 
-.annuity-event-card.upcoming::before {
-  background: linear-gradient(45deg, #10b981, #34d399);
-}
-
-.annuity-event-card.ongoing::before {
-  background: linear-gradient(45deg, #3b82f6, #60a5fa);
-}
 
 .annuity-event-card:hover {
   transform: translateX(10px);
@@ -3511,16 +3365,7 @@ p {
   }
 }
 
-/* Additional iOS Safari fixes */
-@supports (-webkit-touch-callout: none) {
-  /* iOS Safari specific fixes */
-  .tedx-hero::before,
-  .annuity-hero::before {
-  }
-  
-  body::before {
-  }
-}
+
 
 /* Safari-specific fixes for iOS compatibility */
 @supports (-webkit-appearance: none) and (not (appearance: none)) {
@@ -3548,15 +3393,3 @@ p {
   }
 }
 
-/* Additional iOS Safari fixes */
-@supports (-webkit-touch-callout: none) {
-  /* iOS Safari specific fixes */
-  .tedx-hero::before,
-  .annuity-hero::before {
-    background: -webkit-radial-gradient(center, circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%) !important;
-  }
-  
-  body::before {
-    background: -webkit-radial-gradient(25% 25%, circle, rgba(99, 102, 241, 0.05) 0%, transparent 50%) !important;
-  }
-}

@@ -12,7 +12,7 @@ const ContactForm = () => {
   const [error, setError] = useState("");
 
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbzBRnny_qNITq1-RDvcTLFiEclq0Wqy2qxTbDHREpApT2rIXfoNsPIWeI5HzLAlpTLMvg/exec";
+    "https://script.google.com/macros/s/AKfycbxxlBILBJb6DyVaGMnRfBSwYWPlHv3vQcqU9AtBL8LJoou7NJ5UDNjGMppv2xfA3wVh/exec";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -156,16 +156,6 @@ const ContactForm = () => {
             className="form-control"
             required
           />
-          <small
-            style={{
-              color: "var(--gray-500)",
-              fontSize: "0.75rem",
-              marginTop: "var(--space-xs)",
-              display: "block",
-            }}
-          >
-            💡 Use your @iitgn.ac.in email for faster response
-          </small>
         </div>
 
         <div style={{ marginBottom: "var(--space-md)" }}>
@@ -191,14 +181,14 @@ const ContactForm = () => {
             style={{ cursor: "pointer" }}
           >
             <option value="">Select a topic...</option>
-            <option value="Career Guidance">🧭 Career Guidance</option>
-            <option value="Resume Review">📄 Resume Review</option>
-            <option value="Placement Support">💼 Placement Support</option>
-            <option value="Event Inquiry">🎪 Event Inquiry</option>
-            <option value="Partnership">🤝 Partnership Opportunity</option>
-            <option value="Technical Support">🔧 Technical Support</option>
-            <option value="Feedback">💬 Feedback</option>
-            <option value="Other">❓ Other</option>
+            <option value="Career Guidance">Career Guidance</option>
+            <option value="Resume Review">Resume Review</option>
+            <option value="Placement Support">Placement Support</option>
+            <option value="Event Inquiry">Event Inquiry</option>
+            <option value="Partnership">Partnership Opportunity</option>
+            <option value="Technical Support">Technical Support</option>
+            <option value="Feedback">Feedback</option>
+            <option value="Other">Other</option>
           </select>
         </div>
 
@@ -280,10 +270,6 @@ const ContactForm = () => {
             textAlign: "center",
           }}
         >
-          <p style={{ margin: 0 }}>
-            🔒 Your information is secure and will only be used to respond to
-            your inquiry.
-          </p>
         </div>
       </form>
 

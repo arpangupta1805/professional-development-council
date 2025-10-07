@@ -66,6 +66,17 @@ export const TeamData = [
     back: "I'm Kushal Mehta, a third year CSE student.\n\n the Industrial Management Coordinator in PDC and look forward to improve the culture at our college, which at the end of the day is the most important aspect of any college! ",
   },
 
+  {
+    name: "Aadya Arora",
+    image: "/assets/images/Aadya_Arora.png",
+    position: "Coordinator",
+    level: "",
+    email: "aadya.arora@iitgn.ac.in",
+    contact: "9310499169",
+    linkedin: "",
+    profile: "",
+    github: "",
+  },
 
   // Webmasters
   {
