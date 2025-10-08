@@ -235,7 +235,7 @@ main, .main-content, article, section {
 }
 
 /* Mobile menu enhancements */
-@media (max-width: 768px) {
+@media (max-width: 1054px) {
   .main_navbar {
     padding: 1rem !important;
   }
@@ -679,19 +679,27 @@ body {
 }
 
 /* Mobile hamburger icon */
-.nav-icon {
-  display: none !important;
-  font-size: 1.5rem !important;
-  cursor: pointer !important;
-  color: var(--text-primary-glass) !important;
-  padding: 0.5rem !important;
-  border-radius: 8px !important;
-  transition: all 0.3s ease !important;
+@media (max-width: 1054px) {
+  .nav-icon {
+    display: block !important;
+    font-size: 1.5rem !important;
+    cursor: pointer !important;
+    color: var(--text-primary-glass) !important;
+    padding: 0.5rem !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .nav-icon:hover {
+    color: var(--text-accent-glass) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
 }
 
-.nav-icon:hover {
-  color: var(--text-accent-glass) !important;
-  background: rgba(255, 255, 255, 0.1) !important;
+@media (min-width: 1055px) {
+  .nav-icon {
+    display: none !important;
+  }
 }
 
 /* Buttons glass effect with new color scheme */

@@ -21,11 +21,15 @@ const Footer = () => {
       label: "Placement Talks",
       loginRequired: true,
     },
-    { href: "/resume_review", label: "Resume Review" },
+    { href: "/resume_review", label: "Resume Review", loginRequired: true },
     {
       href: "https://kishan-ved.github.io/resume_generator/resumegenerator.html",
       label: "Resume Builder",
       external: true,
+    },
+    { href: "https://docs.google.com/spreadsheets/d/1a2nWrTPgqPat6neif8OI8sSvKnjFH8t25fjEvx4FojU/edit?gid=0#gid=0", 
+      label: "External Opportunity",
+      loginRequired: true,
     },
   ];
 

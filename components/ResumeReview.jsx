@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 const ResumeReview = () => {
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxeStGzTNAzauv_ox1QJgDm55Ej5QMjmxePrTSjFl8Jcj7LTDsDNMF2Vox4Bu6qSDxD/exec';
+    // TODO: Replace this with your new Google Apps Script Web App URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyjVCkqfp-iOHbRu_2L3Dvo-tXnJmAu7RjhWAlgO_empGh26apr91a1PLONQeYi_jlXZw/exec';
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -11,14 +12,25 @@ const ResumeReview = () => {
         const formData = new FormData(e.target);
         formData.append('SheetName', 'Resume');
         try {
-            await fetch(scriptURL, { method: 'POST', body: formData });
-            setMessage('Your Response has been recorded successfully!');
+            const response = await fetch(scriptURL, { method: 'POST', body: formData });
+            const result = await response.json();
+            
+            if (result.result === 'success') {
+                setMessage('Your Response has been recorded successfully!');
+                e.target.reset();
+            } else {
+                setMessage('Error: ' + (result.error || 'Something went wrong'));
+            }
+            
             setTimeout(() => {
                 setMessage('');
             }, 4000);
-            e.target.reset();
         } catch (error) {
             console.error('Error!', error.message);
+            setMessage('Error: Failed to submit. Please try again.');
+            setTimeout(() => {
+                setMessage('');
+            }, 4000);
         } finally {
             setIsLoading(false);
         }

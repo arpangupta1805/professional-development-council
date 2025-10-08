@@ -82,7 +82,7 @@ const Navbar = () => {
         <div className="nav-logo">
           <Link href="/" className="logo-image" onClick={closeMenu}>
             <Image
-              src="/assets/images/PDC IITGN.jpg"
+              src="/assets/images/Logo.jpg"
               alt="PDC IIT Gandhinagar Logo"
               className="nav-logo-img"
               width={50}
