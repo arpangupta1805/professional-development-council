@@ -190,7 +190,7 @@ const Navbar = () => {
                     cursor: "pointer",
                   }}
                 >
-                  PrepMat (Login Required)
+                  PrepMat 
                 </button>
               )}
               {/* {user ? (
@@ -240,7 +240,7 @@ const Navbar = () => {
                     cursor: "pointer",
                   }}
                 >
-                  Placement Talks (Login Required)
+                  Placement Talks 
                 </button>
               )}
               {user ? (
@@ -270,7 +270,37 @@ const Navbar = () => {
                     cursor: "pointer",
                   }}
                 >
-                   External Opportunities (Login Required)
+                   External Opportunities 
+                </button>
+              )}
+              {user ? (
+                <a
+                  target="_blank"
+                  href="https://docs.google.com/spreadsheets/d/1ONRaEGOPfMZBhnseetnzeBJgWJccwzoKkAAPiHWSkNE/edit?usp=drivesdk"
+                  className="drop-nav-links"
+                  onClick={closeMenu}
+                  rel="noopener noreferrer"
+                  role="menuitem"
+                >
+                   Peer Guidance
+                </a>
+              ) : (
+                <button
+                  className="drop-nav-links"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSignIn();
+                  }}
+                  role="menuitem"
+                  style={{
+                    border: "none",
+                    background: "transparent",
+                    width: "100%",
+                    textAlign: "left",
+                    cursor: "pointer",
+                  }}
+                >
+                   Peer Guidance
                 </button>
               )}
             </div>
@@ -345,7 +375,7 @@ const Navbar = () => {
                     cursor: "pointer",
                   }}
                 >
-                  📝 Resume Review (Login Required)
+                  📝 Resume Review 
                 </button>
               )}
               {user ? (
@@ -375,7 +405,7 @@ const Navbar = () => {
                     cursor: "pointer",
                   }}
                 >
-                  🔧 Resume Builder (Login Required)
+                  🔧 Resume Builder 
                 </button>
               )}
             </div>

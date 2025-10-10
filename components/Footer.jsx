@@ -31,6 +31,10 @@ const Footer = () => {
       label: "External Opportunity",
       loginRequired: true,
     },
+    { href: "https://docs.google.com/spreadsheets/d/1ONRaEGOPfMZBhnseetnzeBJgWJccwzoKkAAPiHWSkNE/edit?usp=drivesdk", 
+      label: "Peer Guidance",
+      loginRequired: true,
+    },
   ];
 
   const divisions = [
