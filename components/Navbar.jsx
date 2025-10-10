@@ -252,7 +252,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   role="menuitem"
                 >
-                   External Opportunities
+                   Off Campus Opportunity Portal
                 </a>
               ) : (
                 <button
@@ -270,7 +270,7 @@ const Navbar = () => {
                     cursor: "pointer",
                   }}
                 >
-                   External Opportunities 
+                   Off Campus Opportunity Portal
                 </button>
               )}
               {user ? (
@@ -282,7 +282,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   role="menuitem"
                 >
-                   Peer Guidance
+                   Peer Guidance Portal
                 </a>
               ) : (
                 <button
@@ -300,7 +300,7 @@ const Navbar = () => {
                     cursor: "pointer",
                   }}
                 >
-                   Peer Guidance
+                   Peer Guidance Portal
                 </button>
               )}
             </div>

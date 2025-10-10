@@ -28,11 +28,11 @@ const Footer = () => {
       external: true,
     },
     { href: "https://docs.google.com/spreadsheets/d/1a2nWrTPgqPat6neif8OI8sSvKnjFH8t25fjEvx4FojU/edit?gid=0#gid=0", 
-      label: "External Opportunity",
+      label: "Off Campus Opportunity Portal",
       loginRequired: true,
     },
     { href: "https://docs.google.com/spreadsheets/d/1ONRaEGOPfMZBhnseetnzeBJgWJccwzoKkAAPiHWSkNE/edit?usp=drivesdk", 
-      label: "Peer Guidance",
+      label: "Peer Guidance Portal" ,
       loginRequired: true,
     },
   ];
