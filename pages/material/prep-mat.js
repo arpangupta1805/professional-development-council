@@ -358,21 +358,6 @@ const PrepMat = () => {
           <div className="filters-controls">
             <div className="search-section">
               <div className="search-input-wrapper">
-                <svg
-                  className="search-icon"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
                 <input
                   type="text"
                   placeholder="Search companies, technologies, or skills..."

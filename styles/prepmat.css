@@ -343,12 +343,6 @@
   align-items: center;
 }
 
-.search-icon {
-  position: absolute;
-  left: var(--space-md);
-  color: var(--gray-400);
-  z-index: 1;
-}
 
 .search-input-advanced {
   width: 100%;
