@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import AuthWrapper from "../components/AuthWrapper";
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }) {
             <div>
               <Navbar />
               <Component {...pageProps} />
+              <SpeedInsights />
               <Footer />
             </div>
           </AuthWrapper>
